@@ -1,7 +1,7 @@
 *.pyc
 __pycache__
 vent
-db.sqlite3
+#db.sqlite3
 /static
 .idea
-/app/static/upload
+
