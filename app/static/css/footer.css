@@ -1,0 +1,56 @@
+.footer{
+
+}
+.footerConteoner{
+    background-color: #f7c851;
+    padding: 40px 20px;
+    padding-right: 50px;
+    font-size: 1.1em;
+    margin-left: 0;
+}
+
+
+
+.footerList {
+    margin: 0;
+    margin-bottom: 30px;
+    list-style-type: none;
+    
+}
+
+.footerList_h{
+    margin-bottom: 10px;
+}
+.footerList_item{
+
+}
+.courses_item{
+    margin: 10px 0;
+}
+.courses_link,
+.footerList_link{
+    color: #fff;
+}
+.other_link{
+
+}
+.socialNetwork{
+    padding-left: 30px;
+}
+.socialNetwork_icon{}
+.socialNetwork_link{
+    margin-right: 10px;
+}
+.socialNetwork_img{
+    width: 40px;
+}
+.about{
+    margin-top: 20px;
+}
+.footerEnd{
+    background-color: #f3c039;
+    text-align: center;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 0;
+}

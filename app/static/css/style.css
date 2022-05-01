@@ -1,0 +1,37 @@
+@font-face{
+    font-family: Primus; /* Имя шрифта */
+    src: url(../fonts/Primus.otf); /* Путь к файлу со шрифтом */
+}
+body{
+    font-family: Primus;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #eee;
+}
+p{
+    font-size: 1.2em;
+    margin: 0;
+}
+.content{
+    font-size: 1.2em;
+}
+.wraper{
+    margin: 0 auto;
+    max-width: 1200px;
+}.heder{
+    
+}
+.header_canvas{
+    width: 100%;
+}
+.list li{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+
+}@media only screen and (max-width: 640px) {
+    .visibility_header{
+        display: none;
+    }
+
+}

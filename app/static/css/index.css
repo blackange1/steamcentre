@@ -1,0 +1,150 @@
+
+/* HEADER */
+bo
+.main{
+    /*background-color: white;*/
+}
+.description{
+    background-color: #413ada;
+    padding: 20px 40px 60px 40px;
+}
+.description_img{
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 0;
+}
+.description_headline{
+    text-align: center;
+}
+.description_text{
+    text-align: center;
+}
+.photo_conteiner{
+    height: 350px;
+    background-image: url(../img/children.webp);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-attachment: fixed;
+}
+.photo{
+    width: 100%;
+    visibility: hidden;    ;
+}
+.abrivation{
+
+}
+.m-left{
+    margin-left: 0;
+}
+.abrivation_item{
+    min-height: 300px;
+}
+.abrivation_content{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding-top: 20px;
+}
+.abrivation_heading{
+   
+}
+.abrivation_text{
+
+}
+.science{
+    background: url(../img/steam/mini_science.svg) 100% 100% no-repeat;
+    background-color: #0EC167;
+}
+.technology{
+    background: url(../img/steam/mini_technology.svg) 100% 100% no-repeat;
+    background-color: #F47A62;
+}
+.engeneering{
+    background: url(../img/steam/mini_engeneering.svg) 100% 100% no-repeat;
+    background-color: #f3c039;
+}
+.math{
+    background: url(../img/steam/mini_math.svg) 100% 100% no-repeat;
+    background-color: #413ADB;
+}
+.art{
+    background: url(../img/steam/mini_art.svg) 100% 100% no-repeat;
+    background-color: #9A5DDB;
+}
+.science,
+.technology,
+.engeneering,
+.math,
+.art{
+    padding: 0 40px;
+}
+
+.center-block{
+    margin: 0 auto;
+}
+.activity{}
+.uk-card-title{
+
+}
+.activity{
+    text-align: center;
+}
+.activity_content{
+    padding: 80px 40px 60px 40px;
+}
+.activity_heading{
+    color: #333;
+}
+.activity_text{
+    color: #666;
+}
+.google_map{
+
+}
+.google_map iframe{
+    width: 100%;
+    height: 450px;
+}
+
+
+@media only screen and (max-width: 1020px) {
+    .photo_conteiner{
+        height: auto;
+        background: none;
+    }
+    .photo{
+        visibility: visible; 
+    }
+}
+@media only screen and (min-width: 62em) {
+    .science{
+        background: url(../img/steam/science.svg) 100% 100% no-repeat;
+        background-color: #0EC167;
+    }
+    .technology{
+        background: url(../img/steam/technology.svg) 100% 100% no-repeat;
+        background-color: #F47A62;
+    }
+    .engeneering{
+        background: url(../img/steam/engeneering.svg) 100% 100% no-repeat;
+        background-color: #F7C852;
+    }
+    .math{
+        background: url(../img/steam/math.svg) 100% 100% no-repeat;
+        background-color: #413ADB;
+    }
+    .art{
+        background: url(../img/steam/art.svg) 100% 100% no-repeat;
+        background-color: #9A5DDB;
+
+    }
+    .abrivation_item{
+        min-height: 400px;
+    }
+    .abrivation_content{
+        width: 50%;
+    }
+    .m-left {
+        margin-left: 50%;
+    }
+}

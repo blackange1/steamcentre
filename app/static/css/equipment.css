@@ -1,0 +1,122 @@
+.main{
+    color: #666;
+}
+.lab_headline{
+    font-size: 2em;
+    color: #fff;
+}
+.lab_content{
+    padding-bottom: 20px;
+}
+.lab_img
+{
+    width: 33%;
+}
+.lab_img_numb{
+    display: flex;
+    justify-content: center;
+}
+@media only screen and (max-width: 640px) {
+    .lab_img{
+        width: 100%;
+    }
+}
+.lab_text{
+    padding: 30px 40px 0 40px;
+    text-align: justify;
+}
+.lab_textfirst{
+    padding-top: 30px;
+}
+.resource{
+    padding-bottom: 20px;
+}
+.resource_top{
+    position: relative;
+}
+.resource_count{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2em;
+
+    border: 2px solid 0b65b0;
+    border-radius: 50%;
+
+    color:#fff;
+    background-color: #0b65b0;
+
+    min-width: 30px;
+    min-height: 30px;
+    
+}
+@media only screen and (min-width: 640px) {
+    .uk-card:hover{
+        box-shadow: 0 0 10px rgba(11,101,176,0.5);
+    }
+}
+.vr{
+    background-color: #0b65b0;
+}
+.robo_junior{
+    background-color: #4bb5ab;
+}
+.robo_lab{
+    background-color: #ff749e;
+}
+.robo_arena{
+    background-color: #7eba30;
+}
+.lab_3d{
+    background-color: #9b7a63;
+}
+.makespace{
+    background-color: #3d582f;
+}
+.mediastudio{
+    background-color: #45d784;
+}
+.gamedev{
+    background-color: #6b8cff;
+}
+.arduinolan{
+    background-color: #20284d;
+}
+.exprem{
+    background-color: #43c1f7;
+}
+.uk-modal-header
+{
+    color: #333;
+}
+.uk-modal-dialog{
+    color: #666;
+    width: 1000px;
+}
+
+.resource_body{
+    position: relative;
+}
+.resource-click{
+    width: 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.modal_p{
+    margin-bottom: 10px;
+}
+hr{
+    clear: both;
+}
+@media only screen and (max-width: 640px) {
+    .uk-modal-title{
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,72 @@
+.resurs {
+    display: flex;
+    justify-content: center;
+}
+
+.resurs img {
+
+}
+.list li{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.list_wrap{
+    margin: 10px;
+}
+.warning{
+    background-color: red;
+    color:white;
+    padding: 20px;
+    border-radius: 10px;
+}
+h3{
+    font-weight: bold;
+}
+.header_curse{
+    margin-left: 0;
+}
+.spike{
+    background-color: #ffd400;
+}
+.eve{
+    background-color: #ff070c;
+}
+.arduino{
+    background-color: #17a1a5;
+}
+.box{
+    padding: 40px 40px;
+    color: white;
+}
+.junior{
+    background-color: #00bbff;
+}
+.plan{
+    background-color: white;
+    color: #666;
+}
+p{
+    margin-bottom: 10px;
+}
+.plan_items{
+
+}
+.uk-open{
+
+}
+.uk-accordion-title{
+
+}
+.palan_list{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+@media (min-width: 640px) {
+    .plan_img{
+        max-height: 250px;
+    }
+}
+.plan_wrap_img{
+    justify-content: center;
+    align-items: center;
+}

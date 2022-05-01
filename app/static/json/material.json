@@ -1,0 +1,1334 @@
+material = [
+    // Tinkercad3D start
+    {
+        "name":  "STAR WARS | A-wing",
+        "color": "#91CA06",
+        "srcImg": "img/methodical_material/17.png",
+        "link": "https://drive.google.com/file/d/1p42mOg66QKdnpPaI2IqVG3z_Mrh0k_10/view?usp=sharing",
+        "tegs": [
+            "3D",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "Покрокова модель побудови бойової авіації A-wing із зоряних війн",
+        ]
+    },
+    {
+        "name":  "Гарячі клавіші для Tinkercad 3D",
+        "color": "#91CA06",
+        "srcImg": "img/methodical_material/18.png",
+        "link": "https://drive.google.com/file/d/1zIAeR5Ptxg-0lxTRMMllM2u0AybD9UXm/view?usp=sharing",
+        "tegs": [
+            "3D",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "Гарчі клавіші англійською та українською мовами, моделюй 3D-об'єкти набагато швидше",
+        ]
+    },
+    // Tinkercad3D end
+
+    // woofJS start
+    {
+        "name":  "1.1 Зірковий злодій",
+        "color": "#9FE2DD",
+        "srcImg": "img/methodical_material/19.png",
+        "link": "https://drive.google.com/file/d/1qeKwLxUV8KKYVUDDbOCAYk8_AaUq7QJS/view?usp=sharing",
+        "tegs": [
+            "JavaScript",
+            "woofJS",
+            "Інформатика",
+        ],
+        "content": [
+            "На цьому занятті ми будемо створювати гру з об'єктом, який зникає і з’являється випадково при кожному натисканні. Спробуйте натиснути на об'єкт якомога більше разів, перш ніж закінчиться час",
+        ],
+        "source": "https://woofjs.com/create.html"
+    },
+    {
+        "name":  "1.2 Яблуневий дощ",
+        "color": "#9FE2DD",
+        "srcImg": "img/methodical_material/20.png",
+        "link": "https://drive.google.com/file/d/1DSAQmOJOszMqY282a2cw7Ejs5XE7DB_6/view?usp=sharing",
+        "tegs": [
+            "JavaScript",
+            "woofJS",
+            "Інформатика",
+        ],
+        "content": [
+            "У цьому проекті ми збираємося зробити гру, де персонаж повинен збирати падаючі яблука, перш ніж вони торкнуться землі. Гра буде працювати навіть на мобільному телефоні!",
+        ],
+        "source": "https://woofjs.com/create.html"
+    },
+    {
+        "name":  "1.3 Голодний краб",
+        "color": "#9FE2DD",
+        "srcImg": "img/methodical_material/21.png",
+        "link": "https://drive.google.com/file/d/1pz5Eki7SnfOppyosniKQwgWhPgs_0_Ch/view?usp=sharing",
+        "tegs": [
+            "JavaScript",
+            "woofJS",
+            "Інформатика",
+        ],
+        "content": [
+            "Використовуйте клавіші зі стрілками для переміщення краба, щоб він міг вполювати рибку. Спробуйте нагодувати краба якомога більше за 30 секунд!",
+        ],
+        "source": "https://woofjs.com/create.html"
+    },
+    // woofJS end
+
+
+    // Blender start
+    {
+        "name":  "Дерев'яний стіл",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/22.png",
+        "link": "https://drive.google.com/file/d/1XJl5KCw3oe-pWSR0AQGURaw1vJCnDEYm/view?usp=sharing",
+        "tegs": [
+            "3D",
+            "Blender",
+            "Інформатика",
+        ],
+        "content": [
+            "Покрокова модель побудови дерев'яного солу з викорстанням базових прийомів вирівнювання",
+        ],
+        "source": "https://www.youtube.com/watch?v=At9qW8ivJ4Q&t=2363s"
+    },
+    {
+        "name":  "Міні місто",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/23.png",
+        "link": "https://drive.google.com/file/d/1sfbEaVk2tM58xzz6wPKTrNMOAiYX5sjE/view?usp=sharing",
+        "tegs": [
+            "3D",
+            "Blender",
+            "Інформатика",
+        ],
+        "content": [
+            "Дуже простий і дієвий спосіб прокачати свої навички в 3D та побудувати низькополігональну ігрову сцену",
+        ],
+        "source": "https://www.youtube.com/watch?v=At9qW8ivJ4Q&t=2801s"
+    },
+    // Blender end
+
+
+    // Unity start
+    {
+        "name":  "1.1 Запуск 3D платформи для створення ігор",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/1.png",
+        "link": "https://drive.google.com/file/d/1QuFYdPnSNR5IZ6FkDg2cb9n60RmWccR5/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "На цьому уроці ти створиш свій перший ігровий проект в Unity. Також, ти розмістиш транспортний засіб для гравця, змусиш його рухатись та взаємодіяти з перешкодами. Попрацюєш з камерою, налаштуєш оптимальний вигляд сцени. Протягом цього процесу ти навчишся орієнтуватися в редакторі Unity та будеш впевнено себе почувати в 3D просторі сцени. І наприкінці, ти налаштуєш свій власний макет вікна для редактора Unity.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "1.2 Давим на педаль",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/2.png",
+        "link": "https://drive.google.com/file/d/11TV01QKfWRKGvWzhz5sQktMJwGjtPnib/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "У цьому уроці ви змусите ваш симулятор водіння ожити. Спочатку ти будеш напишіть свої перші рядки коду на C #, змінивши положення транспортного засобу та що дозволяє йому рухатися вперед. Далі ви додасте до свого складу компоненти фізики об’єкти, що дозволяє їм стикатися один з одним. Нарешті, ви дізнаєтесь, як дублювати предмети в ієрархії та розміщувати їх уздовж дороги.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "1.3 Висока швидкість погоні",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/3.png",
+        "link": "https://drive.google.com/file/d/1dI4zLlvY3Ga1LeXr4SZybtta0TLVelks/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Слідкуй за дорогою! У цьому уроці ти створиш новий C# Script для камери, він дозволить їй слідувати за автомобілем. Для цього тобі доведеться скористатися дуже важливою концепцією в програмуванні, це змінні.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "1.4 Додай керування",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/4.png",
+        "link": "https://drive.google.com/file/d/1kx9OMrRR6bItQfI7pNxVTX_1HpIXBoi_/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "На цьому уроці нам потрібно виїхати на дорогу та отримати контроль над автомобілем. Для цього нам потрібно визначити, коли водій натискає клавіші, тоді прискорити і повернути авто на основі цього вхідних даних. Використовуючи нові методи, вектори та змінні, ти дозволиш авто рухатись так, як цього очікує гравець.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "Завдання 1. Програмування літака",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/5.png",
+        "link": "https://drive.google.com/file/d/1_Ef5k7qBK0AFyl5PFtIhW9X6iMthkFYZ/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Використовуй навички, які ти отримав на попередніх заняттях, доведеться створювати перешкоди в повітрі. Тобі доведеться отримати вхідні дані з клавіатури, стрілки вгору та вниз відповідатимуть за висоту літака. Також, тобі потрібно налаштувати камеру, щоб вона рухалась разом з літаком.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "2.1 Позиціонування гравця",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/6.png",
+        "link": "https://drive.google.com/file/d/12Wr0egjlfQJFnYOEWoDbOCh-WEDO5Qxo/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Ви почнете цей блок із створення нового проекту для вашого другого Prototype. Спочатку вам потрібно обрати головного вигляд персонажа, тварин яких би ви хотіли нагодувати та якою їжею. Ви запрограмуєте гравця на рух з боку в бік, як у Prototype 1,тільки тепер вам знадобляться оператор if, щоб утримати гравця в обмеженнях",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "2.2 Літаюча їжа",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/7.png",
+        "link": "https://drive.google.com/file/d/1qyo-ZA0_HDWioBLKtzEXAwBeJ_CqoUmh/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "На цьому уроці ви дозволите гравцеві запустити снаряд через сцену. Спочатку ви напишете новий сценарій для відправки снаряда вперед. Далі ви збережете снаряд разом з усіма його сценаріями та властивостями, використовуючи важливу нову концепцію в Unity, яка називається Prefabs. Гравець зможе запустити снаряд, натиснувши пробіл. Нарешті, ви додасте межі сцени, видаляючи будь-які предмети, що залишають екран.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "2.3 Випадкове розташування тварин",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/8.png",
+        "link": "https://drive.google.com/file/d/1lPEwllF1IsiG0RG1UUXk6biqQ3msRByP/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Наші звірі ходять по екрану і виходять за межі, але насправді вони не з’являються в грі, якщо ми їх не розташуємо на сцені! На цьому уроці ми дозволимо тваринам самостійно з’являтись у випадковому місці верхньої частини екрану. Для цього ми створимо новий об’єкт і новий сценарій для управління всім процесами префабу.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "2.4 Game Over",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/9.png",
+        "link": "https://drive.google.com/file/d/1lTmX8fUCBVZqrJQWLvoXmmhmXbwYTJg-/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Наша гра працює добре, але є кілька важливих нюансів, які ми повинні додати, перш ніж вона закінчиться. По-перше, для тварин ми створемо таймер, щоб вони з’являлися кожні кілька секунд. Далі ми додамо коллайдери до всіх наших префабів і зробимо так, що запуск снаряда в об’єкт знищить його. Вкінці, ми покажемо повідомлення «Game Over», якщо будь-яка істота пройде повз гравця",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "Завдання. 2 Гра з песиком",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/10.png",
+        "link": "https://drive.google.com/file/d/1fCC00pkxyjTp0yr9qAvmXGqNh28gncg_/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Для програмування використовуйте свої навички створення масивів та випадкових чисел, коли кульки випадковим чином падають з неба, ви повинні відправити собаку, щоб зловити їх, перш ніж вони впадуть на землю. Щоб виконати це завдання, вам доведеться переконатися, що ваші змінні присвоєні належним чином, ваші оператори if запрограмовані правильно, ваші зіткнення працюють добре та об’єкти генеруються випадковим чином.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "3.1 Потужний стрибок",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/11.png",
+        "link": "https://drive.google.com/file/d/1s1LXwEuCjpqOhCO28T0D2MrZuTU8F-Jo/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Мета цього уроку - налаштувати основний ігровий процес для цього прототипу. Ми почнемо зі створення нового проекту та імпортування початкових файлів. Далі ми виберемо фон та головного героя, і дозволимо цьому персонажу стрибати за допомогою клавіші пробілу. Ми також виберемо перешкоду для гравця та створимо менеджер створення, який кидатиме їх на шлях гравця через певний проміжок часу."
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "3.2 Налаштування сцени",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/12.png",
+        "link": "https://drive.google.com/file/d/1fL6HaZTAkP5jwPzEeGZ0f5fYtXrA_Kfp/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Ми зрозуміли основну механіку цієї гри: гравець може натиснути пробіл, щоб перестрибнути перешкоди. Фон видно протягом перших декількох секунд, але потім фон просто зникає! Для того, щоб це виправити, нам потрібно повторювати фон. Нам також потрібна зупинка гри, коли гравець стикається з перешкодою, зупинити повторення фону та створення перешкод. Наприкінці, ми повинні знищити будь-які перешкоди, що проходять повз гравця.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "3.3 Додавання анімації",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/13.png",
+        "link": "https://drive.google.com/file/d/1IF00xwtnJQcwBMuDyvGOgD9ODieuiIHZ/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Зараз гра виглядає чудово, але рухи гравця трохи ... не живі. Замість того, щоб персонаж просто ковзав по землі, ми дамо йому анімацію для бігу, стрибків і навіть смерті! Ми також налаштуємо швидкість цих анімацій, встановивши їх час, щоб вони виглядали ідеально в ігровому процесі.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "3.4 Система частинок та звукові ефекти",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/14.png",
+        "link": "https://drive.google.com/file/d/1_h3EeFeNUlhZ4G6ggaSEB3pQQneXYOsj/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Ця гра виглядає надзвичайно добре, але їй чогось не вистачає: звукових ефектів та ефектів частинок! Звуки та музика вдихнуть життя в безшумний ігровий світ, а частинки зроблять дії гравця більш динамічними та вражаючими. У цьому уроці ми додамо круті звуки та частинки, коли персонаж біжить, стрибає та падає",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "Завдання 3. Повітряна кулька",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/15.png",
+        "link": "https://drive.google.com/file/d/16uupfAlhToWvVgovV3aeipzzUywVTxFd/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Застосуйте свої знання з фізики, прокрутки фонів та спецефектів до повітряної кулі, що пливе містом, піднімаючи жетони, уникаючи вибухівки. У цьому проекті вам доведеться усунути багато помилок.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    {
+        "name":  "4.1 Дивіться, куди ви прямуєте",
+        "color": "#212B35",
+        "srcImg": "img/methodical_material/16.png",
+        "link": "https://drive.google.com/file/d/1W5mUknz0v-bkzSzy4MdssnDtebFY9MT6/view?usp=sharing",
+        "tegs": [
+            "Unity",
+            "Інформатика",
+        ],
+        "content": [
+            "Перш за все, ми створимо новий прототип і завантажимо допоміжні файли! Ви познайомитесь з моделлю острова, неба та частинок ... все це можна налаштувати! Далі ви дозволите гравцеві обертати положення камери навколо острова, забезпечуючи чудовий вид сцени. Гравець буде представлений кулею, загорнутою в текстуру на ваш вибір. Наприкінці, ви додасте сили гравцеві, дозволяючи йому рухатися вперед або назад у напрямку камери.",
+        ],
+        "source": "https://learn.unity.com/"
+    },
+    // Unity end
+
+    // *****************************
+    // Arduino start ***************
+    // *****************************
+    {
+        "name":  "№1: Еффект бігущої хвилі із вогників світлодіодів",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/1.jpg",
+        "link": "https://www.tinkercad.com/things/4o41hCmr4pt",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№2: Повторення команд за допомогою циклу for",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/2.jpg",
+        "link": "https://www.tinkercad.com/things/7SCqiBCyK1d",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№3: Демонстрація ШІМ",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/3.jpg",
+        "link": "https://www.tinkercad.com/things/51Qv2kk6wVj",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    
+    {
+        "name":  "№4: Демонстрація роботи цифрового входу",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/4.jpg",
+        "link": "https://www.tinkercad.com/things/aAwMx0R2OCn",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№5: Керування рухом",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/5.jpg",
+        "link": "https://www.tinkercad.com/things/dOEjNx3Pxyb",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№6: Тестер для одноелементних батарейок",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/6.jpg",
+        "link": "https://www.tinkercad.com/things/feoTYD0ZRb5",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№7: Використання зумера",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/7.jpg",
+        "link": "https://www.tinkercad.com/things/bCT0jiE1ns1",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№8: Швидкореагуючий термометр",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/8.jpg",
+        "link": "https://www.tinkercad.com/things/7sJ4jZG0vd0",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№9: Функція для повторного виконання дій",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/9.jpg",
+        "link": "https://www.tinkercad.com/things/6LZ5I8qKjnC",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№10: Функція, що змінює число миготінь світлодіода",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/10.jpg",
+        "link": "https://www.tinkercad.com/things/logouV82TJE",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№11: Термометр, що повідомляє температуру миготінням світлодіода",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/11.jpg",
+        "link": "https://www.tinkercad.com/things/5X3k0vQxfDm",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№12: Відображення температури в моніторі порту",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/12.jpg",
+        "link": "https://www.tinkercad.com/things/4OPvLRqrwcl",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№13: Збільшення числа на два",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/13.jpg",
+        "link": "https://www.tinkercad.com/things/8NLHzsdpSih",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№14: Використання змінних типу long",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/13.jpg",
+        "link": "https://www.tinkercad.com/things/hfc9YP3G5TQ",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№15: Електронний кубик",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/15.jpg",
+        "link": "https://www.tinkercad.com/things/0MRunf0TMTP",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№16: Світлодіодний індикатор для двійкових чисел",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/16.jpg",
+        "link": "https://www.tinkercad.com/things/228C9ynO5c9",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№17: Гра «Двійкова вікторина»",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/17.jpg",
+        "link": "link",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№18: Дисплей з однією цифрою",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/18.jpg",
+        "link": "https://www.tinkercad.com/things/3IydaE47eV8",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№19: Управління двома семисегментними індикаторами",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/19.jpg",
+        "link": "https://www.tinkercad.com/things/5hN5ZHKUfEI",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№20: Цифровий термометр",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/20.jpg",
+        "link": "https://www.tinkercad.com/things/7qUCvq6U1eA",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№21: Створення світлодіодної матриці",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/21.jpg",
+        "link": "https://www.tinkercad.com/things/fgL2czIt7AD",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№22: Створення образів на світлодіодній матриці",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/22.jpg",
+        "link": "https://www.tinkercad.com/things/4yxTSHyOgpc",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№23: Відображення образу на світлодіодній матриці",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/23.jpg",
+        "link": "https://www.tinkercad.com/things/4y2sXtpq2bt",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№ 24: Анімація на світлодіодній матриці",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/24.jpg",
+        "link": "https://www.tinkercad.com/things/iyhVWAD9je6",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№25: Визначення власних символів",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/25.jpg",
+        "link": "https://www.tinkercad.com/things/6xkRmTwpkYQ",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№31: Секундомір",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/31.jpg",
+        "link": "https://www.tinkercad.com/things/96r4DnOJfZW",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№ 32: Використання преривання",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/32.jpg",
+        "link": "https://www.tinkercad.com/things/ehwqAIbTIEa",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "№38: Аналоговий термометр",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/38.jpg",
+        "link": "https://www.tinkercad.com/things/3Yg0m5JIx80",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+    {
+        "name":  "39: Управління електродвигуном",
+        "color": "#316E99",
+        "srcImg": "img/methodical_material/arduino/39.jpg",
+        "link": "https://www.tinkercad.com/things/bohTkG3bxYq",
+        "tegs": [
+            "Arduino",
+            "Tinkercad",
+            "Інформатика",
+        ],
+        "content": [
+            "",
+        ],
+        "source": "",
+    },
+        
+    // {
+    //     "name":  "text",
+    //     "color": "#316E99",
+    //     "srcImg": "img/methodical_material/arduino/0.jpg",
+    //     "link": "link",
+    //     "tegs": [
+    //         "Arduino",
+    //         "Tinkercad",
+    //         "Інформатика",
+    //     ],
+    //     "content": [
+    //         "",
+    //     ],
+    //     "source": "",
+    // },
+    // ************************** //
+    // AR *********************** //
+    // ************************** //
+    {
+        "name":  "Винаходи Леонардо да Вінчі",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/dv.png",
+        "link": "https://drive.google.com/file/d/1PlhT273A-8BMN_fWxzEqLrqj5q-umgIO/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Інформатика",
+            "Мистецтво",
+        ],
+        "content": [
+            "<b>Da Vinci Machines</b>. Цей додаток створить доповнену реальність і перенесе вас в неймовірний світ винаходів Леонардо да Вінчі. Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.dmatsokin.vinci1&gl=UA"
+    },
+    {
+        "name":  "Найвідоміші хмарочоси та будівлі світу",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/11.png",
+        "link": "https://drive.google.com/file/d/1rRKU-JPsCpO1y3JRclRdxe7UkNePwWMo/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Англ",
+            "Інформатика",
+
+        ],
+        "content": [
+            "<b>Skyscrapers AR</b>. Це нова форма додатка доповненої реальності, яка пропонує користувачам залишатися поруч із відомими хмарочосами світу, ходити навколо будівлі та детально розглядати її з усіх боків, з’ясовуючи особливості архітектурного творіння.  Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.dmatsokin.skyscrapers&gl=UA"
+    },
+    {
+        "name":  "НУШ: Доповнена реальність на уроках математики",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/math.png",
+        "link": "https://drive.google.com/file/d/1LDdOpRkhVBhyuH68sUOp5_WumkNrH-Gv/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Математика",
+            "Інформатика",
+            "НУШ"
+
+        ],
+        "content": [
+            "<b>CleverBooks Geometry</b>. Інноваційний та захоплюючий спосіб вивчення геометрії за допомогою візуалізації та взаємодії. За допомогою колекції флеш-карт можна вивчати прості геометричні фігури.   Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=ru.skyinnovations.cbgeometry&gl=UA"
+    },
+    {
+        "name":  "Будова Сонячної системи. Запуск ракети",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/math.png",
+        "link": "https://drive.google.com/file/d/1VqvBQfqJ0JPsUfEd34D0WPUSwjao-pI5/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Інформатика",
+            "НУШ",
+            "Я у світіт",
+        ],
+        "content": [
+            "<b>CleverBooks Space</b>. Додаток охоплює інженерні та космічні інтерактивні завдання доповненої реальності для дітей початкового рівня 7-11 років. Можливості: планети Сонячної системи, складання космічних ракет, навчальні пункти про просту механіку, функції деталей космічної ракети, вибір, космічна місія за вибором дитини. Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=eu.cleverbooks.space&gl=UA"
+    },
+    {
+        "name":  "3D модель Сонячної системи та 3D моделі її планет",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/astr.png",
+        "link": "https://drive.google.com/file/d/1NI_38z7YPPUGUsecTKj-gusK-rUyXcR6/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Астрономія",
+            "Інформатика",
+        ],
+        "content": [
+            "<b>AR Solar System</b>. Мобільний додаток із технологією доповненої реальності дозволяє отримати на екрані гаджету 3D модель Сонячної системи та 3D моделі усіх планет Сонячної системи. Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.ar.solar&gl=UA"
+    },
+    {
+        "name":  "3D моделі найвідоміших мостів світу",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/most.png",
+        "link": "https://drive.google.com/file/d/1tHJoTE_kptRD51PBpaWGV7wRzCEECIiH/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Англ",
+            "Географія",
+            "Інформатика",
+            "НУШ",
+        ],
+        "content": [
+            "<b>ABridges AR</b>. Мобільний додаток, який містить 3D моделі мостів світу. Цей додаток можна використовувати у проектній діяльності «Мости» у позашкільний час у STEAM-лабораторії, а також на уроках англійської мови, географії тощо.  Мітки для друку доступні у кінці документу",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.dmatsokin.bridges"
+    },
+    {
+        "name":  "Доповнена реальність на уроках",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/ar/qui.png",
+        "link": "https://drive.google.com/file/d/1sMKNXbguhwWXpzvrQAQp-1W_HMUtvUwb/view?usp=sharing",
+        "tegs": [
+            "AR",
+            "Англ",
+            "Географія",
+            "Інформатика",
+            "НУШ",
+            "Я у світі",
+        ],
+        "content": [
+            "Додаток <b>Quiver</b> дозволяє дітям і дорослим розкрити в себе таланти художника і особисто взаємодіяти з своїми індивідуальними творіннями. Розфарбовані картинки «оживуть» прямо на екрані, з'явиться можливість грати з анімованими персонажами, розфарбованими вибраними кольорами, доторкнувшись до екрану пристроїв.",
+            "Мітки для друку можна завантажити увівши адресу <a href='https://quivervision.com/education-coloring-packs' target='_blank'>https://quivervision.com/education-coloring-packs</a>"
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.puteko.colarmix&gl=UA"
+    },
+    {
+        "name":  "Віртуальна реальність з YouTube:360",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-youtube.png",
+        "link": "https://drive.google.com/file/d/1u9o0Y82OTvqEeFfV9Sz2Xco_u1iAJgcC/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Англ",
+            "Географія",
+            "Інформатика",
+            "НУШ",
+            "Я у світі",
+        ],
+        "content": [
+            "<b>YouTube VR</b>. Це основна програма для тих, хто захоплюється 360-градусним відео, включаючи віртуальну реальність. Каталог відеороликів VR постійно зростає. Список відеозаписів може варіюватися від музики до відео дикої природи. Для використання - вам необхідно у полі пошуку, крім ключових слів, додавати додаткові слова 'vr' або '360'. Підбірка youtube-каналів з відео 360:",
+            "1. <a href='https://www.youtube.com/c/CAPTIVISION/videos' target='_blank'>www.youtube.com/c/CAPTIVISION/videos</a>",
+            "2. <a href='https://www.youtube.com/c/AirPanoVR/videos' target='_blank'>www.youtube.com/c/AirPanoVR/videos</a>"
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.vr&gl=UA"
+    },
+
+    {
+        "name":  "Будова внутрішнього вуха у VR 3D",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-3d.png",
+        "link": "https://drive.google.com/file/d/1iCzUs5KmiZ2cKdPXMEBo9cj8xe89TQOz/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Біологія",
+            "Інформатика",
+            "Я у світі",
+        ],
+        "content": [
+            "За допомогоюм цього додатку діти знайомляться із будовою вуха, слухового процесу, використовуючи інтерактивну 3D модель, а також дізнаються як орган слуху перетворює коливання повітря на електричні сигнали, які обробляються мозком.",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.rendernet.hearing&gl=UA"
+    },
+    {
+        "name":  "Акрополь - інтерактивне освітнє 3D-відео",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-3d2.png",
+        "link": "https://drive.google.com/file/d/1qNq-CioWldjuyO0HVw9pry_QitFYBBNE/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Географія",
+            "Інформатика",
+            "Історія",
+            "Я у світі",
+        ],
+        "content": [
+            "Афінський Акрополь був зведений у період правління Перікла і сьогодні є, мабуть, найвідомішою цитаделлю світу. Мандруйте знаменитими історичними місцями та познайомтеся з важливими подіями минулого за допомогою запропонованої 3D-анімацій!",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.rendernet.acropolis&gl=UA"
+    },
+    {
+        "name":  "Будова тіла людини - інтерактивне освітнє 3D-відео",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-3d3.png",
+        "link": "https://drive.google.com/file/d/1vq03YcVjMkGbEZQ-rpAdFqUHVrw4i3zJ/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Біологія",
+            "Інформатика",
+            "Я у світі",
+        ],
+        "content": [
+            " Навчальна 3d-анімація дає загальне уявлення про структуру та роботу найважливіших органів людського тіла.",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.rendernet.humanmale&gl=UA"
+    },
+
+    {
+        "name":  "WITHIN - підбірка цікавих VR відео для навчання",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-within.png",
+        "link": "https://drive.google.com/file/d/1QpmO4nu109t0Udvf40qQ5dPj3Sqhm9jD/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Астрономія",
+            "Географія",
+            "Інформатика",
+            "Музика",
+            "Я у світі",
+            "НУШ",
+        ],
+        "content": [
+            "Відкрийте для себе найкращий контент VR від найкращих у світі творців VR – все в одному додатку. Від захоплюючих історій, сюжет яких розвивається в цілком вигаданих світах, до документальних фільмів, що занурюють вас у новини глибше, ніж будь-коли раніше, Within збирає разом першосортний контент на сюжетній основі з ефектом занурення різноманітних жанрів. Перелік цікавих відео для школи: <br>- Моцарт 360: Глорія, 05:20 хв, 2019; <br>- Моцарт 360: Бенедикт, 04:35 хв, 2019;  <br>- 	Моцарт 360: Agnus Dei, 04:00 хв;  <br>- Запуск ракети з космодрому Байканур, Вихід у відкритий космос, 04:21 хв; <br> - Прогулянка з горилами, 06:03 хв; <br>  - Зміна клімату: танення льодовиків, 09:46 хв  ",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=com.shakingearthdigital.vrsecardboard&gl=UA"
+    },
+
+    {
+        "name":  "Віртуальні тури найвідомішими містами, країнами світу",
+        "color": "#EA7600",
+        "srcImg": "img/methodical_material/vr/vr-sites.png",
+        "link": "https://drive.google.com/file/d/1DGzfKJeHTkij3AUpUuYk9Nkbbwsx3YNz/view?usp=sharing",
+        "tegs": [
+            "VR",
+            "Географія",
+            "Інформатика",
+            "Я у світі",
+            "НУШ",
+        ],
+        "content": [
+            "<b>Sites in  VR</b>.Віртуальні тури визначними місцями з Туреччини, Єгипту, Саудівської Аравії, Сирії, Марокко, Кувейту, Ємену, Македонії, Голландії, Бельгії, Франції, Італії, Греції та Космосу. Вивчіть чудеса ісламської архітектури, відвідайте мечеті, гробниці, палаци султанів, музеї, корчми, лазні, замки, вежі, старовинні будинки, площі, парки, природу, релігійні об’єкти, стародавні міста, космос та інші місця з понад тисячою Панорамні зображення на 360 градусів у високій якості. Підніміться на Ейфелеву вежу, зайдіть всередину єгипетських пірамід і навіть відвідайте Марс! Ви відчуєте, ніби ви там...",
+        ],
+        "source": "https://play.google.com/store/apps/details?id=air.com.ercangigi.sitesin3d&gl=UA"
+    },
+
+    {
+        "name":  "Заняття 1. Допоможіть!",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/1.png",
+        "link": "https://drive.google.com/file/d/15XmaQIMCOxvpj6qJyZ0Z3okky0gKFpiG/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 1. Загін винахідників",
+            "Для створення моделі використовується датчик кольору, який може визначати колір предмета. Датчик розрізняє різні відтінки кольорів",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-invention-squad/help#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 2. Хто швидше?",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/2.png",
+        "link": "https://drive.google.com/file/d/1t8PUjD2Emms9tt-S2kynRb0BaN6K-eE4/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 1. Загін винахідників",
+            "Швидкість, формули обрахунку. Створення найшвидшої моделі блохи. Використання середнього мотору",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-invention-squad/hopper-race#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 3. Ідеальне прибирання",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/3.png",
+        "link": "https://drive.google.com/file/d/1lPCFVGxSj4Gfscv7gHT1hy6ORsT46c7-/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 1. Загін винахідників",
+            "Яким має бути ідеальний захват для прибирання? Створення відповідної моделі та пристрою керування, перевірка можливостей",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-invention-squad/super-cleanup#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 4. Усунути поломку",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/4.png",
+        "link": "https://drive.google.com/file/d/1YglR0SfB6xCDRlC8BesyFUHAgTG4wQL2/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 1. Загін винахідників",
+            "Станок з ЧПУ (числове програмне управління), виправлення помилок в побудові. Використання зубчастої передачі",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-invention-squad/broken#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 5. Модель для друга",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/5.png",
+        "link": "https://drive.google.com/file/d/1xBujvKDYYjwgJTRjBcLXBb_3r2Dr3k8O/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 1. Загін винахідників",
+            "Створення моделі протезу кисті руки, за допомогою якого люди з обмеженими можливостями можуть виконати будь-яку дію",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-invention-squad/design-for-someone#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 6. Наступне замовлення",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/6.png",
+        "link": "https://drive.google.com/file/d/1iLOZHZNW82K_gJyX81ONkDdfl2B9i5om/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Створення робота служби контроля якості, який буде допомагати перевіряти якість нової продукції",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/place-your-order#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 7. Несправність",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/7.png",
+        "link": "https://drive.google.com/file/d/1hbsOHeDvzhyyFJ8ANIis5VQQKiR9vLSw/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Побудова моделі транспортного візка для перевезення посилок, яку обов’язково потрібно полагодити",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/out-of-order#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 8. Система відстеження",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/8.png",
+        "link": "https://drive.google.com/file/d/1w5_5cy65dhl9VT4fIMdFUV7RGg8gne01/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Всім важливо знати де знаходяться посилки, які вони замовили. Для цього використовують системи відстеження. Побудова власної системи відстеження",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/track-your-packages#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 9. Безпека понад усе",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/9.png",
+        "link": "https://drive.google.com/file/d/1e-55-M29ZU4qqkR7S5olq0zma2HbM8kX/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Замки та паролі – засоби безпеки, які використовують в усьому світі для захисту речей та інформації. Побудова моделі сейфа для захисту цінних речей",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/keep-it-safe#%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE-%D0%BE%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F"
+    },
+    {
+        "name":  "Заняття 10. Ще безпечніше!",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/10.jpg",
+        "link": "https://drive.google.com/file/d/1LsXeGOaCZIfTtLCGmhx_dvZLLsPtzyxi/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Як посилити захист, щоб ніхто не зміг зламати твій пароль. Побудова ще міцнішої та безпечнішої сейфової комірки",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/keep-it-really-safe#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name": "Заняття 11. Автоматизація виробництва",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/11.jpg",
+        "link": "https://drive.google.com/file/d/1oV0gZ-YUQpPFrCtT4xohwn663zsPzAoM/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 2. Запускаємо бізнес",
+            "Створення робота-помічника. Розробка та програмування промислового робота, який міг би розрізняти посилки по кольору і відправляти їх замовнику",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-kickstart-a-business/automate-it#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 12. Брейк-данс",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/12.png",
+        "link": "https://drive.google.com/file/d/1iUpG0xoq4xAywo-ON2qEuuJbpNwvuBGB/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 3. Корисні пристосування",
+            "Створення робота, який танцює брейк-данс! Він буде танцювати під музику і нагадувати, що необхідно зробити перерву і порухатись",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-life-hacks/break-dance#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 13. Робот тренер",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/13.png",
+        "link": "https://drive.google.com/file/d/1x3u7tT8rgZ5FIJ9mOOxItl12PV_wkD4W/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 3. Корисні пристосування",
+            "Створення робота Лео - особистого тренера. Цей особистий тренер допоможе підрахувати кількість зроблених присідань",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-life-hacks/repeat-5-times#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 14. Дощ чи сонце?",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/14.png",
+        "link": "https://drive.google.com/file/d/1ZUg3XseogHCDJhPyFWB-Hx3pFMLaDRB2/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 3. Корисні пристосування",
+            "Створення робота Синоптика. Давайте дізнаємось, наскільки точно він зможе передбачити погоду на сьогодні!",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-life-hacks/rain-or-shine#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 15. Швидкість вітру",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/15.png",
+        "link": "https://drive.google.com/file/d/1PJYSdw8poUK0eWerO2wCS8igd857o7r1/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 3. Корисні пристосування",
+            "Створення індикатора швидкості вітру за шкалою Бофорта. Цей пристрій повідоме про швидкість вітру, а також про те, чи безпечно сьогодні запускати паперового змія або квадракоптер, грати у волейбол або влаштовувати пікнік на свіжому повітрі",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-life-hacks/wind-speed#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+    {
+        "name":  "Заняття 16. Піклування про рослини",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/spike/16.png",
+        "link": "https://drive.google.com/file/d/1mO2IBNwH2h7UoOq6pzBrrAH6FcPcZDou/view?usp=sharing",
+        "tegs": [
+            "Spike",
+            "Робототехніка",
+            "Інформатика",
+        ],
+        "content": [
+            "Курс 3. Корисні пристосування",
+            "Створення індикатора рівня поливу для вирощення помідорів. Він повідомить чи потрібно сьогодні поливати помідори.",
+        ],
+        "source": "https://education.lego.com/ru-ru/lessons/prime-life-hacks/veggie-love#%D0%BF%D0%BB%D0%B0%D0%BD-%D1%83%D1%80%D0%BE%D0%BA%D0%B0"
+    },
+
+    // end SPIKE
+
+    // ***********
+    // stert OTHER
+    // ***********
+    {
+        "name":  "Chrome Music Lab",
+        "color": "#F19200",
+        "srcImg": "img/methodical_material/other/1.png",
+        "link": "https://musiclab.chromeexperiments.com/",
+        "tegs": [
+            "Інформатика",
+            "Музика",
+        ],
+        "content": [
+            "Це веб-сайт, який робить вивчення музики доступнішим за допомогою веселих практичних експериментів.",
+            "Багато вчителів використовують Chrome Music Lab як інструмент у своїх класах для вивчення музики та її зв’язків із природознавством , математикою , мистецтвом тощо. Вони поєднували це з танцями та живими інструментами.",
+            "Ви можете використовувати його для створення власних пісень. Створювати акаунт не потрібно",
+            "Ви можете працювати з цими експериментами на різних пристроях – телефонах, планшетах, ноутбуках – просто відкриваючи сайт у веб-переглядачі, наприклад Chrome.",
+        ],
+    },
+    {
+        "name":  "Songsmith",
+        "color": "#85ff00",
+        "srcImg": "img/methodical_material/other/2.gif",
+        "link": "https://education.microsoft.com/en-us/resource/3f31e641",
+        "tegs": [
+            "Інформатика",
+            "Музика",
+        ],
+        "content": [
+            "Це чудовий спосіб заохотити учнів до творчості: багато музичних педагогів знають, що іноді просто допомогти дітям «знайти свою іскру» — це найважча частина стимулювання музичної творчості.",
+            "Крім того, Songsmith може допомогти вам вивчити музичні поняття, які іноді є складними, зокрема, як акорди використовуються в поп-музиці та як мелодії та акорди поєднуються між собою. Використання таких інструментів, як Songsmith, для вивчення цих понять може допомогти поєднати те, що учні вивчають на уроці музики, з музикою, яку вони слухають вдома, незалежно від того, чи навчаються вони в третьому класі чи в старшій школі.",
+            "Навіть поза музичними заняттями Songsmith – це чудовий спосіб заохочувати творчі підходи до навчання."
+        ],
+    },
+
+
+    // {
+    //     "name":  "text",
+    //     "color": "#85ff00",
+    //     "srcImg": "img/methodical_material/",
+    //     "link": "link",
+    //     "tegs": [
+    //         "Інформатика",
+    //     ],
+    //     "content": [
+    //         "text",
+    //     ],
+    //     "source": "link"
+    // },
+    
+]
