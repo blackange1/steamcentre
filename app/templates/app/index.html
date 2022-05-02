@@ -1,5 +1,6 @@
 {% extends 'app/base.html' %}
 {% load static %}
+
 {% block content %}
     <header class="header">
         <img class="header_canvas" src="{% static 'img/header/heder_main.svg' %}" alt="">
@@ -85,7 +86,7 @@
                             <li>
                                 <div class="uk-card uk-card-default">
                                     <div class="uk-card-media-top">
-                                        <img src="{% static card.path_img %}" alt="{{ card.path_img }}">
+                                        <img src="{{ card.img.url }}" alt="{{ card.img.url }}">
                                     </div>
                                     <div class="uk-card-body">
                                         <h3 class="uk-card-title">{{ card.title }}</h3>

@@ -1,10 +1,10 @@
 from django.db import models
 
 
-class CardOfMainSlider(models.Model):
+class MainSlider(models.Model):
     title = \
         models.CharField(max_length=200)
     text = \
         models.TextField()
-    path_img = \
-        models.TextField(max_length=200, null=True)
+    img = \
+        models.ImageField(upload_to='main_slider')
