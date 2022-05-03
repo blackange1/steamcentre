@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/logo.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <title>Login</title>
+</head>
+<style>
+    .form {
+        max-width: 600px;
+        padding: 20px;
+        margin: 20px auto;
+        border: 1px solid #cbecff;
+        border-radius: 2px;
+    {#background-color: #cbecff;#} display: flex;
+        justify-content: center;
+    }
+
+</style>
+<body>
+<form class="form" action="" method="POST">
+    <div>
+        {% csrf_token %}
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                {{ form.password }}
+            </div>
+        </div>
+        <button type="submit" class="uk-button uk-button-default">Увійти</button>
+        {% if message %}
+            <div class="uk-alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    </div>
+</form>
+</body>
+</html>
+<script>
+    let username = document.getElementById('id_username')
+    let password = document.getElementById('id_password')
+
+    username.classList.add('uk-input')
+    password.classList.add('uk-input')
+</script>
+<script defer src="{% static 'js/uikit.js' %}"></script>
+<script defer src="{% static 'js/uikit-icons.js' %}"></script>
