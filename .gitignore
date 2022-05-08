@@ -4,4 +4,4 @@ vent
 #db.sqlite3
 /static
 .idea
-templates
+templates/registration
