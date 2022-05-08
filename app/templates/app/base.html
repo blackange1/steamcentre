@@ -35,7 +35,7 @@
                     <ul class="sub_menu">
                         <li class="sub_menu_item"><a class="sub_menu_link" href="academ.html">академія професій
                             майбутнього</a></li>
-                        <!--<li class="sub_menu_item"><a class="sub_menu_link" href="404.html">підвищення кваліфікації</a></li>-->
+                        {#                        <li class="sub_menu_item"><a class="sub_menu_link" href="404.html">підвищення кваліфікації</a></li>#}
                         <li class="sub_menu_item"><a class="sub_menu_link" href="mobile_lab.html">пересувні
                             лабораторії</a></li>
                         <li class="sub_menu_item"><a class="sub_menu_link" href="fest_robo.html">фестиваль
@@ -56,6 +56,17 @@
 
         </div>
         <div class="uk-navbar-right">
+            {% if user.is_active %}
+                <div class="uk-visible@m" style="margin: 0 10px;">
+                    <a class="uk-button uk-button-default uk-button-small" href="{% url 'logout' %}">Вийти</a>
+                </div>
+            {% else %}
+                <div class="uk-visible@m" style="margin: 0 10px;">
+                    <a class="uk-button uk-button-default uk-button-small" href="{% url 'login' %}">Увійти</a>
+                    <a class="uk-button uk-button-default uk-button-small"
+                       href="{% url 'register' %}">Зареєструватися</a>
+                </div>
+            {% endif %}
             <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon="ratio: 1.5;"
                uk-toggle="target: #sidenav"></a>
         </div>
