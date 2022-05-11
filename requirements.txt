@@ -1,2 +1,2 @@
-Djang-4.0.4
-Pillo-9.1.0
+Djang==4.0.4
+Pillo==9.1.0
