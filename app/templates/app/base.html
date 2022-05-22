@@ -35,7 +35,6 @@
                     <ul class="sub_menu">
                         <li class="sub_menu_item"><a class="sub_menu_link" href="academ.html">академія професій
                             майбутнього</a></li>
-                        {#                        <li class="sub_menu_item"><a class="sub_menu_link" href="404.html">підвищення кваліфікації</a></li>#}
                         <li class="sub_menu_item"><a class="sub_menu_link" href="mobile_lab.html">пересувні
                             лабораторії</a></li>
                         <li class="sub_menu_item"><a class="sub_menu_link" href="fest_robo.html">фестиваль
@@ -57,15 +56,16 @@
         </div>
         <div class="uk-navbar-right">
             {% if user.is_active %}
-                <div class="uk-visible@m" style="margin: 0 10px;">
-                    <a class="uk-button uk-button-default uk-button-small" href="{% url 'logout' %}">Вийти</a>
-                </div>
+            <div class="uk-visible@m" style="margin: 0 10px;">
+                <a class="uk-text-default" href="#">КАБІНЕТ</a>
+                <a class="uk-text-default" href="{% url 'account_logout' %}">ВИЙТИ</a>
+            </div>
             {% else %}
-                <div class="uk-visible@m" style="margin: 0 10px;">
-                    <a class="uk-button uk-button-default uk-button-small" href="{% url 'login' %}">Увійти</a>
-                    <a class="uk-button uk-button-default uk-button-small"
-                       href="{% url 'register' %}">Зареєструватися</a>
-                </div>
+            <div class="uk-visible@m" style="margin: 0 10px;">
+                <a class="uk-text-default" href="{% url 'account_login' %}">УВІЙТИ</a>
+                <a class="uk-text-default"
+                   href="{% url 'account_signup' %}">ЗАРЕЄСТРУВАТИСЯ</a>
+            </div>
             {% endif %}
             <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon="ratio: 1.5;"
                uk-toggle="target: #sidenav"></a>
@@ -92,6 +92,13 @@
                 <li><a href="methodical_material.html">Методичні матеріали</a></li>
             </ul>
             <li><a class="uk-text-large" href="faq.html">FAQ</a></li>
+            {% if user.is_active %}
+            <li><a class="uk-text-default" href="#"><span class="uk-margin-small-right" uk-icon="user"></span>Кабінет</a></li>
+            <li><a class="uk-text-default" href="{% url 'account_logout' %}"><span class="uk-margin-small-right" uk-icon="sign-out"></span>Вийти</a></li>
+            {% else %}
+            <li><a class="uk-text-large" href="{% url 'account_login' %}"><span class="uk-margin-small-right" uk-icon="sign-in"></span>Увійти</a></li>
+            <li><a class="uk-text-large" href="{% url 'account_signup' %}"><span class="uk-margin-small-right" uk-icon="sign-in"></span>Зареєструватися</a></li>
+            {% endif %}
             <!--<li><a class="uk-text-large" href="404.html">Галерея</a></li>-->
         </ul>
     </div>

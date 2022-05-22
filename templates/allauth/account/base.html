@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+
+    <!--    <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/logo.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/uikit.css' %}">
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<style>
+    @font-face{
+        font-family: Primus;
+        src: url(../fonts/Primus.otf);
+    }
+    body{
+        font-family: Primus;
+    }
+    .wraper {
+        max-width: 600px;
+        padding: 20px;
+        margin: 20px auto;
+        border: 1px solid #cbecff;
+        border-radius: 2px;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        margin-right: 5px;
+    }
+    ul li {
+        margin-right: 15px;
+        padding: 5px 10px;
+        border: 2px solid #413ADA;
+        border-radius: 15px;
+        background: #F7C851;
+    }
+<!--    .socialaccount_providers-->
+
+</style>
+<body>
+<div class="wraper">
+    <p><a href="{% url "index" %}">На головну</a></p>
+    {% block body %}
+        {% if messages %}
+        <div>
+            <strong>Messages:</strong>
+            <ul>
+                {% for message in messages %}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <div>
+            <strong>Меню:</strong>
+            <ul>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                {% else %}
+                <li><a href="{% url 'account_login' %}">Увійти</a></li>
+                <li><a href="{% url 'account_signup' %}">Зареєструватись</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        {% block content %}
+        {% endblock %}
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+
+</div>
+<script defer src="{% static 'js/uikit.js' %}"></script>
+<script defer src="{% static 'js/uikit-icons.js' %}"></script>
+</body>
+</html>
