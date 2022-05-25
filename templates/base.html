@@ -57,7 +57,7 @@
         <div class="uk-navbar-right">
             {% if user.is_active %}
             <div class="uk-visible@m" style="margin: 0 10px;">
-                <a class="uk-text-default" href="#">КАБІНЕТ</a>
+                <a class="uk-text-default" href="{% url 'user_info' user.username %}">КАБІНЕТ</a>
                 <a class="uk-text-default" href="{% url 'account_logout' %}">ВИЙТИ</a>
             </div>
             {% else %}
@@ -93,7 +93,7 @@
             </ul>
             <li><a class="uk-text-large" href="faq.html">FAQ</a></li>
             {% if user.is_active %}
-            <li><a class="uk-text-default" href="#"><span class="uk-margin-small-right" uk-icon="user"></span>Кабінет</a></li>
+            <li><a class="uk-text-default" href="{% url 'user_info' user.username %}"><span class="uk-margin-small-right" uk-icon="user"></span>Кабінет</a></li>
             <li><a class="uk-text-default" href="{% url 'account_logout' %}"><span class="uk-margin-small-right" uk-icon="sign-out"></span>Вийти</a></li>
             {% else %}
             <li><a class="uk-text-large" href="{% url 'account_login' %}"><span class="uk-margin-small-right" uk-icon="sign-in"></span>Увійти</a></li>

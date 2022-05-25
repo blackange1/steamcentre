@@ -8,3 +8,4 @@ class MainSlider(models.Model):
         models.TextField()
     img = \
         models.ImageField(upload_to='main_slider')
+

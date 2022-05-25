@@ -35,42 +35,53 @@
     }
     ul li {
         margin-right: 15px;
-        padding: 5px 10px;
-        border: 2px solid #413ADA;
-        border-radius: 15px;
-        background: #F7C851;
+        padding: 0 20px;
+        background-color: #54B9CF;
+        border-color: #54B9CF;
+        border-radius: 20px;
+<!--        padding: 5px 10px;-->
+<!--        border: 2px solid #413ADA;-->
+<!--        border-radius: 15px;-->
+<!--        background: #F7C851;-->
+    }
+    ul li a {
+        color: white;
     }
 <!--    .socialaccount_providers-->
+
+
 
 </style>
 <body>
 <div class="wraper">
-    <p><a href="{% url "index" %}">На головну</a></p>
+    <div>
+<!--        <strong>Меню:</strong>-->
+        <ul>
+            <li><a href="{% url "index" %}">На головну</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+            <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Увійти</a></li>
+            <li><a href="{% url 'account_signup' %}">Зареєструватись</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
     {% block body %}
-        {% if messages %}
-        <div>
-            <strong>Messages:</strong>
-            <ul>
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
+    {% if messages %}
+    <div>
+        <strong>Messages:</strong>
+        {% for message in messages %}
+        <div class="uk-alert-primary" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p>{{message}}</p>
         </div>
-        {% endif %}
-        <div>
-            <strong>Меню:</strong>
-            <ul>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
-                <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
-                {% else %}
-                <li><a href="{% url 'account_login' %}">Увійти</a></li>
-                <li><a href="{% url 'account_signup' %}">Зареєструватись</a></li>
-                {% endif %}
-            </ul>
-        </div>
-        {% block content %}
-        {% endblock %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
     {% endblock %}
     {% block extra_body %}
     {% endblock %}

@@ -2,7 +2,8 @@
 __pycache__
 vent
 db.sqlite3
-/static
+/app/static
 .idea
 templates/registration
 /tmp
+media/
