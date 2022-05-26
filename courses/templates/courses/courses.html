@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+    {% for course in courses %}
+    <div class="header_curse box" style="background: {{ course.background_color }};">
+        <div uk-grid>
+            <div class="uk-width-1-2@s uk-flex uk-flex-column" style="justify-content: center;">
+                <h1 class="uk-text-center">{{ course.name }}</h1>
+                <p><span class="uk-text-italic">Вік:</span>{{ course.age_of_student }}</p>
+                <p><span class="uk-text-italic">Кількість:</span>{{ course.max_count_of_students }}</p>
+            </div>
+            <div class="uk-width-1-2@s"><img src="{{ course.img_course }}" alt=""></div>
+        </div>
+    </div>
+    <div class="box plan">
+        {% for text in course.description %}
+            <p>{{ text }}</p>
+        {% endfor %}
+        {% if course.modules %}
+        <p class="uk-text-center">Планування занять:</p>
+        <ul class="plan_items" uk-accordion="multiple: true">
+            {% for module in course.modules %}
+            <li>
+                <a class="uk-accordion-title" href="#">Модуль {{ module.number_of_module }}. {{ module.name }}</a>
+                <div class="uk-accordion-content" uk-grid>
+                    <div class="uk-width-1-2@s">
+                        <ol class="list palan_list" start="{{ module.start }}">
+                        {% for text in module.description %}
+                            <li>{{ text }}</li>
+                        {% endfor %}
+                        </ol>
+                    </div>
+                    <div class="uk-width-1-2@s uk-flex plan_wrap_img">
+                        <img class="plan_img" src="{{ module.img_module }}" alt="img module">
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endfor %}
+</main>
+
+{% endblock %}

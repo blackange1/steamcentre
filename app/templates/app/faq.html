@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>STEAM Center</title>
+
+<body id="body">
+
+    <div class="wraper">
+        <header class="header visibility_header">
+            <img class="header_canvas" src="{% static 'img/header/header_faq.svg' %}" alt="heder_faq">
+        </header>
+        <main>
+            <div class="faq uk-text-center">
+                <h2 class="faq_headline">FAQ</h2>
+                <p class="uk-text-meta faq_mete">(frequently asked questions)</p>
+                <p>Часто задавані питання</p>
+            </div>
+            <div  class="dialog uk-background-fixed">
+                <div id="dialog" class="dialog_wraper"></div>
+            </div>
+        </main>
+        <footer class="footer" id="mainFooter"></footer>
+    </div>
+    <script defer src="json/menu.json"></script>
+    <script defer src="json/footer.json"></script>
+
+    <script defer src="js/uikit.js"></script>
+    <script defer src="js/uikit-icons.js"></script>
+
+    <script defer>
+        let massages = [
+            {
+                question: "Як вас знайти?",
+                answer: 'Ми знаходимось за адресою <a class="dialog_link" href="https://goo.gl/maps/U9mUAUM8UURY7cWt8" target="_blank">Нечуя-Левицького 4</a>, неподалік від колишнього магазину «Фіалка».',
+            },
+            {
+                question: "Яка вартість занять в «Академії професій майбутнього»?",
+                answer: "Всі заняття, індивідуальні консультації та інше абсолютно безкоштовно."
+            },
+            {
+                question: "Що потрібно брати з собою на заняття?",
+                answer: "Гарний настрій і не більше))"
+            },
+            {
+                question:"Як проводився відбір дітей до «Академії професій майбутнього»?",
+                answer: "Про набір дітей не було оголошено, тому що ще під час ремонтних робіт було створено базу дітей, батьки яких приходили та залишили свої контакти.",
+            },
+            {
+                question:"Чи обов’язково мати якісь спеціальні знання, щоб відвідувати заняття?",
+                answer: "Ні, не обов’язково.",
+            },
+            {
+                question:"Яким чином ви обираєте школи в які приїжджає пересувна лабораторія?",
+                answer: "Наша пересувна лабораторія приїжджає в школи за потребою вчителя або адміністрації школи, які попередньо звертаються до нас.",
+            },
+            {
+                question:"Чи можу я, як вчитель школи, прийти і ознайомитись з ресурсами, які доцільно використати на уроках?",
+                answer: "Так, але велике прохання попередньо телефонувати.",
+            },
+            {
+                question:"Як ми бачимо співпрацю з вчителями?",
+                answer: 'Для початку вчителю варто познайомитись з <a class="dialog_link" href="equipment.html">нашими ресурсами</a>, обрати один чи декілька, які можна використати на уроці. Вчитель керує процесом на уроці, проводе його. Наші працівники в ролі асистентів допомагають там, де потрібно.',
+            },
+            // {
+            //     question:"",
+            //     answer: "",
+            // },
+        ]
+        massages.forEach(m => {
+            dialog.innerHTML += `
+                <div class="dialog_blok ">
+                    <p class="dialog_text dialog_person">${m.question}</p>
+                </div>
+                <div class="dialog_blok uk-flex uk-flex-right">
+                    <p class="dialog_text dialog_we">${m.answer}</p>
+                </div>
+                `
+        })
+    </script>
+
+    <script defer src="js/main.js"></script>
+
+</body>
+</html>
+{% endblock %}

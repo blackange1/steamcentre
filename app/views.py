@@ -10,6 +10,14 @@ def index(request):
     return render(request, 'app/index.html', {'cards': MainSlider.objects.all()})
 
 
+def about(request):
+    return render(request, 'app/about.html')
+
+
+def faq(request):
+    return render(request, 'app/faq.html')
+
+
 # def login_user(request):
 #     if request.user.is_active:
 #         return redirect(index)

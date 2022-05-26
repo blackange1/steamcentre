@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'users',
+    'courses',
 
     'django.contrib.sites',
     # allauth

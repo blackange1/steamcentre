@@ -1,0 +1,93 @@
+{% load static %}
+<div id="mainMenu"
+     uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 1000">
+    <nav class="uk-container uk-navbar">
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li class="uk-active">
+                    <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}" alt=""></a>
+                </li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+                <li class="menu_item"><a class="uk-text-large menu_link"
+                                         href="https://www.facebook.com/%D0%9A%D0%97-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%BC%D1%96%D0%B6%D1%88%D0%BA%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BD%D0%B8%D0%B9-%D1%86%D0%B5%D0%BD%D1%82%D1%80-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D1%80%D0%B0%D0%B4%D0%B8-101079305787439"
+                                         target="_blank">НОВИНИ</a></li>
+                <li></li>
+                <li class="menu_item"><a class="uk-text-large menu_link" href="{% url 'about' %}">ПРО НАС</a></li>
+                <li class="menu_item">
+                    <a class="uk-text-large menu_link" href="#">НАПРЯМКИ РОБОТИ</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="{% url 'curses' %}">академія професій
+                            майбутнього</a></li>
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="mobile_lab.html">пересувні
+                            лабораторії</a></li>
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="fest_robo.html">фестиваль
+                            робототехніки</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item">
+                    <a class="uk-text-large menu_link" href="#">РЕСУРСИ</a>
+                    <ul class="sub_menu">
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="equipment.html">Обладнання</a></li>
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="methodical_material.html">Методичні
+                            матеріали</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a class="uk-text-large menu_link" href="{% url 'faq' %}">FAQ</a></li>
+                <!--<li class="menu_item"><a class="uk-text-large menu_link" href="404.html">ГАЛЕРЕЯ</a></li>-->
+            </ul>
+
+        </div>
+        <div class="uk-navbar-right">
+            {% if user.is_active %}
+            <div class="uk-visible@m" style="margin: 0 10px;">
+                <a class="uk-text-default" href="{% url 'user_info' user.username %}">КАБІНЕТ</a>
+                <a class="uk-text-default" href="{% url 'account_logout' %}">ВИЙТИ</a>
+            </div>
+            {% else %}
+            <div class="uk-visible@m" style="margin: 0 10px;">
+                <a class="uk-text-default" href="{% url 'account_login' %}">УВІЙТИ</a>
+                <a class="uk-text-default"
+                   href="{% url 'account_signup' %}">ЗАРЕЄСТРУВАТИСЯ</a>
+            </div>
+            {% endif %}
+            <a href="#" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon="ratio: 1.5;"
+               uk-toggle="target: #sidenav"></a>
+        </div>
+    </nav>
+</div>
+
+
+<div id="sidenav" uk-offcanvas="flip: true" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav">
+            <li><a class="uk-text-large" target="_blank"
+                   href="https://www.facebook.com/%D0%9A%D0%97-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%BC%D1%96%D0%B6%D1%88%D0%BA%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BD%D0%B8%D0%B9-%D1%86%D0%B5%D0%BD%D1%82%D1%80-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D1%80%D0%B0%D0%B4%D0%B8-101079305787439">Новини</a>
+            </li>
+            <li><a class="uk-text-large" href="{% url 'about' %}">Про нас</a></li>
+            <li><a class="uk-text-large" href="#">Напрямки роботи</a></li>
+            <ul class="uk-nav-sub">
+                <li><a href="{% url 'curses' %}">Академія професій майбутнього</a></li>
+                <!--<li><a href="404.html">Підвищення кваліфікації</a></li>-->
+                <li><a href="mobile_lab.html">Пересувні лабораторії</a></li>
+                <li><a href="fest_robo.html">Фестиваль робототехніки</a></li>
+            </ul>
+            <li><a class="uk-text-large" href="#">Ресурси</a></li>
+            <ul class="uk-nav-sub">
+                <li><a href="equipment.html">Обладнання</a></li>
+                <li><a href="methodical_material.html">Методичні матеріали</a></li>
+            </ul>
+            <li><a class="uk-text-large" href="{% url 'faq' %}">FAQ</a></li>
+            {% if user.is_active %}
+            <li><a class="uk-text-default" href="{% url 'user_info' user.username %}"><span class="uk-margin-small-right" uk-icon="user"></span>Кабінет</a></li>
+            <li><a class="uk-text-default" href="{% url 'account_logout' %}"><span class="uk-margin-small-right" uk-icon="sign-out"></span>Вийти</a></li>
+            {% else %}
+            <li><a class="uk-text-large" href="{% url 'account_login' %}"><span class="uk-margin-small-right" uk-icon="sign-in"></span>Увійти</a></li>
+            <li><a class="uk-text-large" href="{% url 'account_signup' %}"><span class="uk-margin-small-right" uk-icon="sign-in"></span>Зареєструватися</a></li>
+            {% endif %}
+            <!--<li><a class="uk-text-large" href="404.html">Галерея</a></li>-->
+        </ul>
+    </div>
+</div>
