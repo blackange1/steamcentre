@@ -113,8 +113,8 @@ def pre_save_image(sender, instance, *args, **kwargs):
         return False
 
     try:
-        old_file = Laboratory.objects.get(pk=instance.pk).img
-    except Laboratory.DoesNotExist:
+        old_file = Product.objects.get(pk=instance.pk).img
+    except Product.DoesNotExist:
         return False
 
     new_file = instance.img
