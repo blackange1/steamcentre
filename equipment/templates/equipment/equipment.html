@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="wraper">
+    <header class="header visibility_header">
+        <img class="header_canvas" src="{% static  'img/header/header_equipment.svg' %}" alt="">
+    </header>
+    <main class="main" id="main">
+        {% for lab in labs %}
+        <div class="lab_headline uk-text-center" style="background: {{ lab.background_color }}">{{lab.name}}</div>
+        <div class="uk-panel lab_content">
+            <img class="uk-align-{{ lab.position }} uk-margin-remove-adjacent lab_img" src="{{ lab.img }}"
+                 alt="{{ lab.name }}">
+            {% for text in lab.description %}
+            <p class="lab_text">{{ text }}</p>
+            {% endfor %}
+
+        </div>
+        <div class="resource uk-child-width-1-3@m uk-child-width-1-2@s uk-text-center" uk-grid
+             uk-height-match="target: > div > a > div">
+            {% for product in lab.products %}
+            <div>
+                <a href="#product{{ lab.id }}-{{ product.id }}" uk-toggle>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top resource_top uk-inline-clip uk-transition-toggle">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{{ product.img }}"
+                                 alt="{{ product.name }}">
+                            {% if product.count %}
+                            <div class="resource_count" style="background: {{ lab.background_color }}">
+                                {{ product.count }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="resource_body uk-card-title">{{ product.name }}</h3>
+                            <img class="resource-click" src="{% static 'img/click.svg' %}" alt="">
+                        </div>
+                    </div>
+                </a>
+
+                <div id="product{{ lab.id }}-{{ product.id }}" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <div class="uk-modal-header">
+                            <h2 class="uk-modal-title">{{ product.name }}</h2>
+                        </div>
+                        <div class="uk-modal-body" uk-overflow-auto id="modal-body{{ lab.id }}-{{ product.id }}">
+                            {{ product.description|safe|escape }}
+                            <hr>
+                            {% if product.for_age %}
+                            <p><span class="uk-text-italic">Розрахований на дітей</span> {{ product.for_age }}</p>
+                            {% endif %}
+                            {% if product.count %}
+                            <p><span class="uk-text-italic">Кількість – </span>{{ product.count }}</p>
+                            {% endif %}
+                            {% if product.link_offsite %}
+                            <p>
+                                <span class="uk-text-italic">Офіційний сайт:</span>
+                                <a href="{{ product.link_protocol }}://{{ product.link_offsite }}" target="_blank">{{ product.link_offsite }}</a>
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </main>
+</div>
+{% endblock %}
+

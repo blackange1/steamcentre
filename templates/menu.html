@@ -30,7 +30,7 @@
                 <li class="menu_item">
                     <a class="uk-text-large menu_link" href="#">РЕСУРСИ</a>
                     <ul class="sub_menu">
-                        <li class="sub_menu_item"><a class="sub_menu_link" href="equipment.html">Обладнання</a></li>
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="{% url 'equipment' %}">Обладнання</a></li>
                         <li class="sub_menu_item"><a class="sub_menu_link" href="methodical_material.html">Методичні
                             матеріали</a></li>
                     </ul>
@@ -76,7 +76,7 @@
             </ul>
             <li><a class="uk-text-large" href="#">Ресурси</a></li>
             <ul class="uk-nav-sub">
-                <li><a href="equipment.html">Обладнання</a></li>
+                <li><a href="{% url 'equipment' %}">Обладнання</a></li>
                 <li><a href="methodical_material.html">Методичні матеріали</a></li>
             </ul>
             <li><a class="uk-text-large" href="{% url 'faq' %}">FAQ</a></li>

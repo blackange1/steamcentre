@@ -24,6 +24,7 @@ def show_curses(request):
             start += len(description)
         courses.append(
             {
+                'id': course.number_of_courses,
                 'name': course.name,
                 'age_of_student': course.age_of_student,
                 'max_count_of_students': course.max_count_of_students,
