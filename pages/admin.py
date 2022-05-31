@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Image
+from .models import Image, Page
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -22,3 +22,13 @@ class ImageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Image, ImageAdmin)
+
+
+class PageAdmin(admin.ModelAdmin):
+    list_display = (
+        'link',
+        'id',
+    )
+
+
+admin.site.register(Page, PageAdmin)

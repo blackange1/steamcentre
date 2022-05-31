@@ -4,7 +4,15 @@ from django.db import models
 from django.dispatch import receiver
 from django.utils.html import mark_safe
 
-from steamcentre.settings import MEDIA_URL
+
+class Page(models.Model):
+    link = \
+        models.SlugField(max_length=50)
+    html_code = \
+        models.TextField()
+
+    def __str__(self):
+        return self.link
 
 
 class Image(models.Model):

@@ -60,8 +60,9 @@
                             {% if product.link_offsite %}
                             <p>
                                 <span class="uk-text-italic">Офіційний сайт:</span>
-                                <a href="{{ product.link_protocol }}://{{ product.link_offsite }}" target="_blank">{{
-                                    product.link_offsite }}</a>
+                                <a href="{{ product.link_protocol }}://{{ product.link_offsite }}" target="_blank">
+                                    {{ product.link_offsite }}
+                                </a>
                             </p>
                             {% endif %}
                         </div>

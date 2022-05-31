@@ -6,10 +6,6 @@ from .views import index, about, faq
 
 urlpatterns = [
     path('', index, name='index'),
-    path('about/', about, name='about'),
+    # path('about/', about, name='about'),
     path('faq/', faq, name='faq'),
-    # path('login/', login_user, name='login'),
-    # path('register/', register_request, name='register'),
-    # path('logout/', logout_user, name='logout'),
-    # path('accounts/profile/', profile, name='profile')
 ]

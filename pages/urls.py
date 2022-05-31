@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import page
+from .views import get_page
 
 urlpatterns = [
-    path('', page, name='page'),
+    path('<slug:slug>', get_page, name='page'),
 ]

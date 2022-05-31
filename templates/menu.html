@@ -15,15 +15,15 @@
                                          href="https://www.facebook.com/%D0%9A%D0%97-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%BC%D1%96%D0%B6%D1%88%D0%BA%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BD%D0%B8%D0%B9-%D1%86%D0%B5%D0%BD%D1%82%D1%80-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D1%80%D0%B0%D0%B4%D0%B8-101079305787439"
                                          target="_blank">НОВИНИ</a></li>
                 <li></li>
-                <li class="menu_item"><a class="uk-text-large menu_link" href="{% url 'about' %}">ПРО НАС</a></li>
+                <li class="menu_item"><a class="uk-text-large menu_link" href="{% url 'page' 'about' %}">ПРО НАС</a></li>
                 <li class="menu_item">
                     <a class="uk-text-large menu_link" href="#">НАПРЯМКИ РОБОТИ</a>
                     <ul class="sub_menu">
                         <li class="sub_menu_item"><a class="sub_menu_link" href="{% url 'curses' %}">академія професій
                             майбутнього</a></li>
-                        <li class="sub_menu_item"><a class="sub_menu_link" href="mobile_lab.html">пересувні
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="{% url 'page' 'mobile_lab' %}">пересувні
                             лабораторії</a></li>
-                        <li class="sub_menu_item"><a class="sub_menu_link" href="fest_robo.html">фестиваль
+                        <li class="sub_menu_item"><a class="sub_menu_link" href="{% url 'page' 'fest_robo' %}">фестиваль
                             робототехніки</a></li>
                     </ul>
                 </li>
@@ -66,13 +66,13 @@
             <li><a class="uk-text-large" target="_blank"
                    href="https://www.facebook.com/%D0%9A%D0%97-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9-%D0%BC%D1%96%D0%B6%D1%88%D0%BA%D1%96%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BD%D0%B8%D0%B9-%D1%86%D0%B5%D0%BD%D1%82%D1%80-%D0%9F%D0%BE%D0%BB%D1%82%D0%B0%D0%B2%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D0%BC%D1%96%D1%81%D1%8C%D0%BA%D0%BE%D1%97-%D1%80%D0%B0%D0%B4%D0%B8-101079305787439">Новини</a>
             </li>
-            <li><a class="uk-text-large" href="{% url 'about' %}">Про нас</a></li>
+            <li><a class="uk-text-large" href="{% url 'page' 'about' %}">Про нас</a></li>
             <li><a class="uk-text-large" href="#">Напрямки роботи</a></li>
             <ul class="uk-nav-sub">
                 <li><a href="{% url 'curses' %}">Академія професій майбутнього</a></li>
                 <!--<li><a href="404.html">Підвищення кваліфікації</a></li>-->
-                <li><a href="mobile_lab.html">Пересувні лабораторії</a></li>
-                <li><a href="fest_robo.html">Фестиваль робототехніки</a></li>
+                <li><a href="{% url 'page' 'mobile_lab' %}">Пересувні лабораторії</a></li>
+                <li><a href="{% url 'page' 'fest_robo' %}">Фестиваль робототехніки</a></li>
             </ul>
             <li><a class="uk-text-large" href="#">Ресурси</a></li>
             <ul class="uk-nav-sub">

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'courses',
     'equipment',
     'pages',
+    'methodical_material',
 
     'django.contrib.sites',
     # allauth
