@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/academ.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <main class="main">
@@ -16,7 +21,7 @@
     </div>
     <div class="box plan">
         {% for text in course.description %}
-            <p>{{ text }}</p>
+        <p>{{ text }}</p>
         {% endfor %}
         {% if course.modules %}
         <p class="uk-text-center">Планування занять:</p>
@@ -27,9 +32,9 @@
                 <div class="uk-accordion-content" uk-grid>
                     <div class="uk-width-1-2@s">
                         <ol class="list palan_list" start="{{ module.start }}">
-                        {% for text in module.description %}
+                            {% for text in module.description %}
                             <li>{{ text }}</li>
-                        {% endfor %}
+                            {% endfor %}
                         </ol>
                     </div>
                     <div class="uk-width-1-2@s uk-flex plan_wrap_img">

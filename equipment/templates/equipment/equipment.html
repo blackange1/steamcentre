@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/equipment.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="wraper">
     <header class="header visibility_header">
         <img class="header_canvas" src="{% static  'img/header/header_equipment.svg' %}" alt="">
     </header>
@@ -56,7 +60,8 @@
                             {% if product.link_offsite %}
                             <p>
                                 <span class="uk-text-italic">Офіційний сайт:</span>
-                                <a href="{{ product.link_protocol }}://{{ product.link_offsite }}" target="_blank">{{ product.link_offsite }}</a>
+                                <a href="{{ product.link_protocol }}://{{ product.link_offsite }}" target="_blank">{{
+                                    product.link_offsite }}</a>
                             </p>
                             {% endif %}
                         </div>
@@ -67,6 +72,5 @@
         </div>
         {% endfor %}
     </main>
-</div>
 {% endblock %}
 
