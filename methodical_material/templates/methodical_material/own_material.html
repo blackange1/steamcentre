@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<!--<link rel="stylesheet" href="{% static 'css/methodical_material.css' %}">-->
+{% endblock %}
+
+{% block content %}
+<style>
+.main{
+    color: #666;
+    padding: 20px;
+    background: white;
+}
+.sidesection{
+    color:#333;
+    min-width: 300px;
+}
+.content{
+
+    color:#666;
+    padding: 20px 0;
+    width: 100%;
+}
+@media only screen and (max-width: 850px) {
+    .visibility{
+        display: none;
+    }
+}
+</style>
+<header class="header uk-flex">
+<!--    <img class="header_canvas" src="{% static 'img/header/header_equipment.svg' %}" alt="">-->
+<!--    <img class="header_img" src="/media/edu_material/21.png" alt="">-->
+<!--    <h1>STAR WARS | A-wing</h1>-->
+</header>
+<main class="main uk-flex">
+    <section class="content" id="content"></section>
+    <section class="sidesection visibility" id="sidesection"></section>
+</main>
+<script>
+    const print = (s) => {
+        console.log(s)
+    }
+
+    const id_material = {{ pk }}
+    const renderContent = () => {
+        let content = document.getElementById('content')
+        let sidesection = document.getElementById('sidesection')
+
+        fetchRes = fetch('/api/v1/edumaterials/' + id_material);
+        fetchRes.then(res =>
+            res.json()).then(d => {
+                const name = d['name']
+                const date_create = d['date_create']
+                const description = d['description']
+                const detailed_description = d['detailed_description']
+                const img = d['img']
+                const like = d['like']
+                const link_download = d['link_download']
+                const source = d['source']
+                
+                div_description = ''
+                if (detailed_description === '') {
+                    array = description.split('\n')
+                    for (let index = 0; index < array.length; index++) {
+                        const element = array[index];
+                        div_description += `<p>${element}</p>`
+                    }
+                } else {
+                    div_description = detailed_description
+                }
+                content.innerHTML = `
+                    <h1>${name}</h1>
+                    <div>${div_description}</div>
+                `
+                sidesection.innerHTML = `
+                    <img src="${img}" alt="">
+                `
+                print(d)
+            })
+    }
+    
+
+    document.addEventListener('DOMContentLoaded', function(){
+        renderContent()
+    }, false);
+</script>
+
+{% endblock %}
+

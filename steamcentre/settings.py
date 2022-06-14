@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     # providers
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -187,3 +189,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'VERSION': 'v2.4'
         }
 }
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     )
+# }

@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/methodical_material.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header class="header visibility_header">
+    <img class="header_canvas" src="{% static 'img/header/header_equipment.svg' %}" alt="">
+</header>
+<main class="main uk-flex">
+    <section class="materials" id="materials">
+        <div class="article_conteiner article_content statusMatirial">
+            <input type="search" id="search" class="uk-search-input" type="search" placeholder="слова для пошуку">
+            <div>
+                <button class="article_tag" onclick="searchMaterial();resetFilter()">знайти</button>
+            </div>
+        </div>
+        <div id="method"></div>
+    </section>
+    <section class="navtegs visibility">
+        <div class="navtegs_conteiner">
+            <h3 class="navtegs_headline uk-text-center">Рубрики</h3>
+            <form action="" id="form" class="filter_form"></form>
+        </div>
+    </section>
+</main>
+    <style>
+        .like-comment{
+            padding-left: 10px;
+        }
+    </style>
+    <script>
+
+        const print = (obj) => {
+            console.log(obj)
+        }
+
+        const searchMaterial = () => {
+            const search = document.getElementById('search')
+            renderMaterials({'words': search.value})
+        }
+
+        const resetFilter = function(idCategory=null) {
+            const form = document.getElementById('form')
+            const nodeListCheckboxs = form.querySelectorAll('input[type="checkbox"]')
+            for (let index = 0; index < nodeListCheckboxs.length; index++) {
+                let a = 1
+                let chbox = nodeListCheckboxs[index]
+                chbox.checked = false
+            }
+            if (idCategory) {
+                document.getElementById(idCategory).checked = true
+            }
+        }
+
+        const chooseCategory = function() {
+            listCategory = []
+            const form = document.getElementById('form')
+            const nodeListCheckboxs = form.querySelectorAll('input[type="checkbox"]')
+            for (let index = 0; index < nodeListCheckboxs.length; index++) {
+                let chbox = nodeListCheckboxs[index];
+                if (chbox.checked){
+                    listCategory.push(chbox.id)
+                }
+            }
+            if (listCategory.length === 0) {
+                renderMaterials()
+            } else {
+                renderMaterials({'categories': listCategory})
+            }
+        }
+
+        const renderCategory = function() {
+            let form = document.getElementById('form');
+            let fetchResCategories = fetch(
+                "http://127.0.0.1:8000/api/v1/categories/"
+            );
+
+            fetchResCategories.then(res =>
+                res.json()).then(d => {
+                    const categories = d['category']
+
+                    let checkBoxsType = ''
+                    let checkBoxsLessons = ''
+                    for (let index = 0; index < categories.length; index++) {
+                        const category = categories[index]
+                        const id_category = category['id']
+                        const name = category['name']
+                        let long_name = category['long_name']
+                        if (!long_name){
+                            long_name = name
+                        }
+                        const type_category = category['type_category']
+
+                        checkBoxs = `
+                            <div class="fild">
+                            <input type="checkbox" 
+                                id="${name}" onclick="chooseCategory()">
+                            <label 
+                                for="${name}"
+                                class="filter_text"
+                            >${long_name}</label>
+                            </div>
+                        `
+                        if (type_category === '---') {
+                            checkBoxsType += checkBoxs
+                        } else {
+                            checkBoxsLessons += checkBoxs
+                        }
+                    }
+                    form.innerHTML = checkBoxsType
+                    form.innerHTML += '<hr>'
+                    form.innerHTML += checkBoxsLessons
+                })
+        } 
+
+        const renderMaterials = function(context={}) {
+            let method = document.getElementById('method');
+            method.innerHTML = ''
+
+            let fetchRes = null
+            if (Object.keys(context).length === 0) {
+                fetchRes = fetch("/api/v1/edumaterials/");
+            } else {
+                fetchRes = fetch(
+                    "/api/v1/edumaterials/",
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json;charset=utf-8'
+                        },
+                        body: JSON.stringify(context),
+                    }
+                );
+            }
+            fetchRes.then(res =>
+                res.json()).then(d => {
+                    const matirials = d['matirial']
+                    for (let index = 0; index < matirials.length; index++) {
+                        const matirial = matirials[index]
+                        const id_matirial = matirial['id']
+                        const name = matirial['name']
+                        const src_img = matirial['img']
+                        const description = matirial['description']
+                        const like = matirial['like']
+                        const link_download = matirial['link_download']
+                        const source = matirial['source']
+                        const color = matirial['color']
+                        const edu_сategory = matirial['edu_сategory']
+
+                        let batton_category = ''
+                        for (let index = 0; index < edu_сategory.length; index++) {
+                            const edu_element = edu_сategory[index];
+                            batton_category += `
+                                <a href="#materials">
+                                    <button 
+                                        onclick="renderMaterials({'categories': ['${edu_element}']});resetFilter('${edu_element}')"
+                                        class="article_tag"
+                                    >
+                                        ${edu_element}
+                                    </button>
+                                </a>
+                            `
+                        }
+
+                        let p_description = ''
+                        for (let index = 0; index < description.length; index++) {
+                            const element_description = description[index];
+                            p_description += `
+                                <p class="uk-text-justify">${element_description}</p>
+                            `
+                        }
+
+                        let div_source = '<div class="clear">'
+                        if (source) {
+                            div_source += `<span class="like-comment"><a href="${source}" target="_blank">Джерело</a></span>`
+                        }
+                        if (link_download) {
+                            div_source += `<span class="like-comment"><a href="${link_download}" target="_blank" uk-icon="cloud-download"></a></span>`
+                        }
+                        div_source += `
+                            <span class="like-comment"><a href="" uk-icon="bookmark"></a></span>
+                            <span class="like-comment"><a href="" uk-icon="comments"></a> 20</span>
+                            <span class="like-comment"><a href="" uk-icon="heart"></a> ${like}</span>
+                        `
+                        div_source += '</div>'
+                        
+                        method.innerHTML += `
+                            <article class="uk-article uk-animation-slide-left">
+                                <div class="article_conteiner">
+                                    <a href="${id_matirial}" target="_blank">
+                                        <img class="article_img uk-align-left" src="${src_img}" alt="">
+                                    </a>
+                                    <div class="article_content" style="border-color: #${color};">
+                                        <a href="${id_matirial}"><h2 class="article_headline">${name}</h2></a>
+                                        <div class="article_tags">
+                                            ${batton_category}
+                                        </div>
+                                        ${p_description}
+                                        ${div_source}
+                                    </div>
+                                </div>
+                            </article>
+                        `
+                    }
+                })
+        }
+        
+        document.addEventListener('DOMContentLoaded', function(){
+            renderCategory();
+            renderMaterials();
+
+        }, false);
+    </script>
+
+
+{% endblock %}
