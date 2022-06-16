@@ -125,16 +125,20 @@
             if (Object.keys(context).length === 0) {
                 fetchRes = fetch("/api/v1/edumaterials/");
             } else {
-                fetchRes = fetch(
-                    "/api/v1/edumaterials/",
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json;charset=utf-8'
-                        },
-                        body: JSON.stringify(context),
-                    }
-                );
+                url = '/api/v1/edumaterials/?'
+                let s = new URLSearchParams(context)
+                print(url + s)
+                fetchRes = fetch(url + s.toString())
+                // fetchRes = fetch(
+                //     "/api/v1/edumaterials/",
+                //     {
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/json;charset=utf-8'
+                //         },
+                //         body: JSON.stringify(context),
+                //     }
+                // );
             }
             fetchRes.then(res =>
                 res.json()).then(d => {

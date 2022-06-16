@@ -27,15 +27,6 @@ class ColorSerializerAPIView(APIView):
         return Response()
 
 
-class OneEduMaterialAPIView(APIView):
-    def get(self, request, pk):
-        materials = EduMaterial.objects.filter(id=pk)
-        if materials:
-            m = materials[0]
-            return Response(OneEduMaterialSerializer(m).data)
-        return Response()
-
-
 class EduMaterialAPIView(APIView):
     """
     API endpoint that allows edu materia to be viewed or edited.
@@ -58,29 +49,35 @@ class EduMaterialAPIView(APIView):
             'like': obj.like,
         }
 
-    def get(self, request):
-        lst = []
-        for edu_material in EduMaterial.objects.all():
-            lst.append(self.__get_dict_edu_material(edu_material))
-        return Response({'matirial': lst})
+    def get(self, request, pk=None):
+        # pass instants pk
+        if pk:
+            materials = EduMaterial.objects.filter(id=pk)
+            if materials:
+                m = materials[0]
+                return Response(OneEduMaterialSerializer(m).data)
+            return Response({'error': 'not fined'})
 
-    def post(self, request):
         lst = []
 
-        # body: b"{'categories': ...}"
+        # ?categories=3D&categories=Tinkercad
         set_id = set()
-        list_category = request.data.get('categories', None)
-        if not (list_category is None):
+        list_category = dict(request.query_params).get('categories', None)
+        if list_category:
+            list_category = list_category[0].split(',')
+            print('list_category', list_category)
             for category in list_category:
                 for edu_material in EduMaterial.objects.filter(edu_сategory__name=category):
                     if edu_material.id in set_id:
                         continue
                     set_id.add(edu_material.id)
                     lst.append(self.__get_dict_edu_material(edu_material))
+            return Response({'matirial': lst})
 
-        # body: b"{'words': ...}"
-        words = request.data.get('words', None)
-        if words != None:
+        # ?words=3
+        words = dict(request.query_params).get('words', None)
+        if words:
+            words = words[0]
             words = words.strip()
             q_name = EduMaterial.objects.filter(name__contains=words)
             q_description = EduMaterial.objects.filter(description__contains=words)
@@ -88,6 +85,10 @@ class EduMaterialAPIView(APIView):
             q_set.update(q_description)
             for edu_material in q_set:
                 lst.append(self.__get_dict_edu_material(edu_material))
+            return Response({'matirial': lst})
+
+        for edu_material in EduMaterial.objects.all():
+            lst.append(self.__get_dict_edu_material(edu_material))
 
         return Response({'matirial': lst})
 
