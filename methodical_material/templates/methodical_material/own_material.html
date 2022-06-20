@@ -34,16 +34,45 @@
 <!--    <h1>STAR WARS | A-wing</h1>-->
 </header>
 <main class="main uk-flex">
-    {% csrf_token %}
     <section class="content" id="content"></section>
     <section class="sidesection visibility" id="sidesection"></section>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    const id_material = {{ pk }}
+
     const print = (s) => {
         console.log(s)
     }
 
-    const id_material = {{ pk }}
+    //////////
+    // edit_msg
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+    
+    function update_db(url) {
+        return function(data) {
+            let req = axios({
+            method: 'put',
+            url: url,
+            xsrfCookieName: 'csrftoken',
+            xsrfHeaderName: 'X-CSRFToken',
+            data: data,
+            headers: {
+                'X-CSRFToken': 'csrftoken'
+            }
+        }).then((response) => {
+            console.log(response)
+        });
+        return;
+        }
+    }
+
+    add_favorite = update_db('/api/v1/user/')
+    add_favorite({'favorite_id': 1377})
+
+    ////////////////
+    // renderContent
     const renderContent = () => {
         let content = document.getElementById('content')
         let sidesection = document.getElementById('sidesection')
@@ -59,7 +88,7 @@
                 const like = d['like']
                 const link_download = d['link_download']
                 const source = d['source']
-                
+
                 div_description = ''
                 if (detailed_description === '') {
                     array = description.split('\n')
@@ -77,12 +106,13 @@
                 sidesection.innerHTML = `
                     <img src="${img}" alt="">
                 `
-                print(d)
             })
     }
-    
+    // end renderContent
+    ////////////////
 
-    document.addEventListener('DOMContentLoaded', function(){
+
+document.addEventListener('DOMContentLoaded', function(){
         renderContent()
     }, false);
 </script>

@@ -33,7 +33,19 @@ class EduMaterialAPIView(APIView):
     """
 
     @staticmethod
-    def __get_dict_edu_material(obj):
+    def __get_dict_edu_material(obj, all_matirial=False):
+        is_favorite = False
+        is_liked = False
+        if all_matirial:
+            try:
+                matirial = EduMaterial.objects.get(pk=obj.pk)
+                if matirial in all_matirial[0]:
+                    is_favorite = True
+                if matirial in all_matirial[1]:
+                    is_liked = True
+            except:
+                pass
+
         edu_сategory = [c.name for c in obj.edu_сategory.all()]
         description = [s for s in obj.description.split('\r\n')]
 
@@ -47,6 +59,8 @@ class EduMaterialAPIView(APIView):
             'link_download': obj.link_download,
             'source': obj.source,
             'like': obj.like,
+            'is_favorite': is_favorite,
+            'is_liked': is_liked,
         }
 
     def get(self, request, pk=None):
@@ -55,10 +69,19 @@ class EduMaterialAPIView(APIView):
             materials = EduMaterial.objects.filter(id=pk)
             if materials:
                 m = materials[0]
-                return Response(OneEduMaterialSerializer(m).data)
+                return Response(
+                    OneEduMaterialSerializer(m).data
+                )
             return Response({'error': 'not fined'})
 
         lst = []
+
+        all_matirial = False
+        if hasattr(request.user, 'profile'):
+            profile = request.user.profile
+            all_matirial = []
+            all_matirial.append(profile.collection_material.all())
+            all_matirial.append(profile.liked.all())
 
         # ?categories=3D&categories=Tinkercad
         set_id = set()
@@ -71,7 +94,7 @@ class EduMaterialAPIView(APIView):
                     if edu_material.id in set_id:
                         continue
                     set_id.add(edu_material.id)
-                    lst.append(self.__get_dict_edu_material(edu_material))
+                    lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
             return Response({'matirial': lst})
 
         # ?words=3
@@ -84,11 +107,11 @@ class EduMaterialAPIView(APIView):
             q_set = set(q_name)
             q_set.update(q_description)
             for edu_material in q_set:
-                lst.append(self.__get_dict_edu_material(edu_material))
+                lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
             return Response({'matirial': lst})
 
         for edu_material in EduMaterial.objects.all():
-            lst.append(self.__get_dict_edu_material(edu_material))
+            lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
 
         return Response({'matirial': lst})
 
