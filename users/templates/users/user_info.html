@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/methodical_material.css' %}">
+{% endblock %}
+
 {% block content %}
 <header class="header">
     <!--    <img class="header_canvas" src="{% static 'img/header/heder_main.svg' %}" alt="">-->
@@ -55,44 +60,249 @@
   height: 100%;
 }
 
-
+.like-comment{
+    padding-left: 10px;
+}
+.favorite{
+    color: yellowgreen;
+}
+.liked{
+    color: red;
+}
+nav {
+    z-index: 1000;
+}
 </style>
+
 <main class="main " style="color: black;">
-    <form action="" method="post" class="uk-flex-middle" uk-grid style="align-items: flex-start;"
+    <ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade">
+        <li><a href="#"><span uk-icon="cog"></span>налаштування</a></li>
+        <li onclick=renderMaterials(JSONfavorite,id_colections);><a href="#"><span uk-icon="bookmark"></span>вибрані матеріали</a></li>
+        <li onclick=renderMaterials(JSONliked,id_like);><a href="#"><span uk-icon="heart"></span>вподобані матеріали</a></li>
+    </ul>
+    
+    <ul class="uk-switcher uk-margin">
+        <li>
+            <form action="" method="post" class="uk-flex-middle" uk-grid style="align-items: flex-start;"
           enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="uk-width-1-3@m">
-            <!--            <div class="content" style="display: flex; justify-content: center; flex-direction: column;">-->
-            <div class="content">
-                <div class="img-container">
+                <div class="uk-width-1-3@m">
+                    <!--            <div class="content" style="display: flex; justify-content: center; flex-direction: column;">-->
+                    <div class="content">
+                        <div class="img-container">
 
-                    {% if url_photo %}
-                    <img class="face_photo" src="{{ url_photo }}" alt="user photo">
-                    {% else %}
-                    <img class="face_photo" src="{% static 'img/default/user.jpg' %}" alt="user photo">
-                    {% endif %}
-                </div>
+                            {% if url_photo %}
+                            <img class="face_photo" src="{{ url_photo }}" alt="user photo">
+                            {% else %}
+                            <img class="face_photo" src="{% static 'img/default/user.jpg' %}" alt="user photo">
+                            {% endif %}
+                        </div>
 
-                <input type="file" name="img" accept="image/*">
-            </div>
-        </div>
-        <div class="uk-width-2-3@m">
-            <div class="content">
-                <div class="menu" style="display: flex; justify-content: space-between;">
-                    <span>{{ user.username }}</span>
-                    <button class="button" type="submit">Save</button>
+                        <input type="file" name="img" accept="image/*">
+                    </div>
                 </div>
-                <input name="first_name" type="text" value="{{ user.first_name }}" placeholder="Name"><br>
-                <input name="last_name" type="text" value="{{ user.last_name }}" placeholder="Surname">
+                <div class="uk-width-2-3@m">
+                    <div class="content">
+                        <div class="menu" style="display: flex; justify-content: space-between;">
+                            <span>{{ user.username }}</span>
+                            <button class="button" type="submit">Save</button>
+                        </div>
+                        <input name="first_name" type="text" value="{{ user.first_name }}" placeholder="Name"><br>
+                        <input name="last_name" type="text" value="{{ user.last_name }}" placeholder="Surname">
+                    </div>
+                </div>
+            </form>
+            {% for massage in massages %}
+            <div class="uk-alert-primary" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p>{{ massage }}</p>
             </div>
-        </div>
-    </form>
-    {% for massage in massages %}
-    <div class="uk-alert-primary" uk-alert>
-        <a class="uk-alert-close" uk-close></a>
-        <p>{{ massage }}</p>
-    </div>
-    {% endfor %}
+            {% endfor %}
+        </li>
+        <li><div class="colections" id="colections"></div></li>
+        <li><div class="like" id="like"></div></li>
+        
+    </ul>
 </main>
-{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
 
+    const print = (obj) => {
+        console.log(obj)
+    }
+
+
+    ////////////
+    // update_db
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+    function update_db(url) {
+        return function(data) {
+            let req = axios({
+            method: 'put',
+            url: url,
+            xsrfCookieName: 'csrftoken',
+            xsrfHeaderName: 'X-CSRFToken',
+            data: data,
+            headers: {
+                'X-CSRFToken': 'csrftoken'
+            }
+        }).then((response) => {
+            const error = response.data['error']
+            if (error === 'is_anonymous') {
+                window.location.href = '/accounts/login/'
+            }
+        });
+        return;
+        }
+    }
+
+    add_favorite = update_db('/api/v1/user/')
+    // add_favorite({'favorite_id': 1377})
+
+    function click_favorite(id_material) {
+        add_favorite({'favorite_id': id_material})
+        bookmark = document.getElementById(`bookmark_${id_material}`)
+        bookmark.classList.toggle('favorite')
+    }
+
+    function click_like(id_material) {
+        add_favorite({'like_id': id_material})
+        like = document.getElementById(`like_${id_material}`)
+        print(like)
+        
+        let isClassName = false
+        for (let index = 0; index < like.classList.length; index++) {
+            const element = like.classList[index];
+            if (element === 'liked') {
+                isClassName = true
+                break
+            }
+        }
+        if (isClassName) {
+            like.lastChild.textContent = parseInt(like.lastChild.textContent) - 1
+        } else {
+            like.lastChild.textContent = parseInt(like.lastChild.textContent) + 1
+        }
+        like.classList.toggle('liked')
+    }
+
+    ////////////
+    // update_db
+
+  
+    const renderMaterials = function(context={}, id_div) {
+        let arrary = ['colections', 'like']
+        let index = arrary.indexOf('like')
+        
+        if (index) {
+            index = 0;
+        } else {
+            index = 1;
+        }
+        document.getElementById(arrary[index]).innerHTML = ''
+
+        let method = document.getElementById(id_div);
+        method.innerHTML = ''
+
+        let fetchRes = null
+        if (Object.keys(context).length === 0) {
+            fetchRes = fetch("/api/v1/edumaterials/");
+        } else {
+            url = '/api/v1/edumaterials/?'
+            let s = new URLSearchParams(context)
+            print(url + s)
+            fetchRes = fetch(url + s.toString())
+        }
+        fetchRes.then(res =>
+            res.json()).then(d => {
+                const matirials = d['matirial']
+                let loopWorked = false
+                for (let index = 0; index < matirials.length; index++) {
+                    loopWorked = true
+                    const matirial = matirials[index]
+                    const id_matirial = matirial['id']
+                    const name = matirial['name']
+                    const src_img = matirial['img']
+                    const description = matirial['description']
+                    const like = matirial['like']
+                    const link_download = matirial['link_download']
+                    const source = matirial['source']
+                    const color = matirial['color']
+                    const edu_сategory = matirial['edu_сategory']
+                    const isFavorite = matirial['is_favorite']
+                    const isLiked = matirial['is_liked']
+
+                    let batton_category = ''
+                    for (let index = 0; index < edu_сategory.length; index++) {
+                        const edu_element = edu_сategory[index];
+                        batton_category += `<i>${edu_element}</i> |`
+                    }
+
+                    let p_description = ''
+                    for (let index = 0; index < description.length; index++) {
+                        const element_description = description[index];
+                        p_description += `
+                            <p class="uk-text-justify">${element_description}</p>
+                        `
+                    }
+
+                    let div_source = '<div class="clear">'
+                    if (source) {
+                        div_source += `<span class="like-comment"><a href="${source}" target="_blank">Джерело</a></span>`
+                    }
+                    if (link_download) {
+                        div_source += `<span class="like-comment"><a href="${link_download}" target="_blank" uk-icon="cloud-download"></a></span>`
+                    }
+
+                    let classFavorite = ""
+                    if (isFavorite) {
+                        classFavorite = ' favorite'
+                    }
+                    let classLiked = ""
+                    if (isLiked) {
+                        classLiked = ' liked'
+                    }
+                    div_source += `
+                        <span class="like-comment${classFavorite}" id="bookmark_${id_matirial}" uk-icon="bookmark" onclick=click_favorite(${id_matirial})></span>
+                        <span class="like-comment"><a href="#" uk-icon="comments"></a> 20</span>
+                        <span class="like-comment ${classLiked}" id="like_${id_matirial}" onclick=click_like(${id_matirial})><span uk-icon="heart"></span><span id="count_${id_matirial}">${like}</span></span>
+                    `
+                    div_source += '</div>'
+                    
+                    method.innerHTML += `
+                        <article class="uk-article uk-animation-slide-left">
+                            <div class="article_conteiner">
+                                <a href="${id_matirial}" target="_blank">
+                                    <img class="article_img uk-align-left" src="${src_img}" alt="">
+                                </a>
+                                <div class="article_content" style="border-color: #${color};">
+                                    <a href="/methodical_material/${id_matirial}"><h2 class="article_headline">${name}</h2></a>
+                                    <div class="article_tags">
+                                        ${batton_category}
+                                    </div>
+                                    ${p_description}
+                                    ${div_source}
+                                </div>
+                            </div>
+                        </article>
+                    `
+                }
+                if (!loopWorked) {
+                    method.innerHTML = '<h2>список пустий :(</h2>'
+                }
+            })
+    }
+    const JSONfavorite = {filer: 'favorite'}
+    const JSONliked = {filer: 'liked'}
+    const id_colections = 'colections'
+    const id_like = 'like'
+    // renderMaterials
+    document.addEventListener('DOMContentLoaded', function(){
+        renderMaterials(JSONfavorite, id_colections);
+
+
+    }, false);
+</script>
+{% endblock %}

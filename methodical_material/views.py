@@ -33,7 +33,7 @@ class EduMaterialAPIView(APIView):
     """
 
     @staticmethod
-    def __get_dict_edu_material(obj, all_matirial=False):
+    def __get_dict_edu_material(obj, all_matirial=False, one_material=False):
         is_favorite = False
         is_liked = False
         if all_matirial:
@@ -49,7 +49,7 @@ class EduMaterialAPIView(APIView):
         edu_сategory = [c.name for c in obj.edu_сategory.all()]
         description = [s for s in obj.description.split('\r\n')]
 
-        return {
+        res = {
             'id': obj.id,
             'name': obj.name,
             'edu_сategory': edu_сategory,
@@ -63,25 +63,53 @@ class EduMaterialAPIView(APIView):
             'is_liked': is_liked,
         }
 
+        if one_material:
+            res.update({'detailed_description': obj.detailed_description})
+
+        return res
+
     def get(self, request, pk=None):
-        # pass instants pk
-        if pk:
-            materials = EduMaterial.objects.filter(id=pk)
-            if materials:
-                m = materials[0]
-                return Response(
-                    OneEduMaterialSerializer(m).data
-                )
-            return Response({'error': 'not fined'})
-
-        lst = []
-
         all_matirial = False
         if hasattr(request.user, 'profile'):
             profile = request.user.profile
             all_matirial = []
             all_matirial.append(profile.collection_material.all())
             all_matirial.append(profile.liked.all())
+
+        # pass instants pk
+        if pk:
+            # materials = EduMaterial.objects.filter(id=pk)
+            # if materials:
+            #     m = materials[0]
+            #     return Response(
+            #         OneEduMaterialSerializer(m).data
+            #     )
+            # return Response({'error': 'not fined'})
+            materials = EduMaterial.objects.filter(pk=pk)
+            if materials:
+                m = materials[0]
+                return Response(
+                    self.__get_dict_edu_material(m, all_matirial, True)
+                )
+
+        lst = []
+
+        # ?filer='favorite'
+        filer = dict(request.query_params).get('filer', None)
+        print(filer)
+        if filer:
+            filer = filer[0]
+            user = request.user
+            index = 0
+            if filer == 'liked':
+                index = 1
+
+            if filer in ('favorite', 'liked') and not(user.is_anonymous):
+                if hasattr(user, 'profile'):
+                    # for edu_material in user.profile.collection_material.all():
+                    for edu_material in all_matirial[index]:
+                        lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
+            return Response({'matirial': lst})
 
         # ?categories=3D&categories=Tinkercad
         set_id = set()

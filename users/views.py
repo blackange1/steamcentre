@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
-import json
-from .models import Profile
-from steamcentre.settings import BASE_DIR, MEDIA_ROOT
+
 from methodical_material.models import EduMaterial
+from steamcentre.settings import BASE_DIR, MEDIA_ROOT
+from .models import Profile
 
 
 def user_info(request, username):
@@ -35,13 +35,14 @@ def user_info(request, username):
         url_photo = ''
         if profile:
             url_photo = profile.img.url
-        
+
         massages.append('Дані збережено')
         return render(request, 'users/user_info.html', context={'url_photo': url_photo, 'massages': massages})
 
     url_photo = ''
-    if profile.img:
-        url_photo = profile.img.url
+    if profile:
+        if profile.img:
+            url_photo = profile.img.url
     return render(request, 'users/user_info.html', context={'url_photo': url_photo, 'massages': massages})
 
 
