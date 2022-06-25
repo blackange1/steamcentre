@@ -29,11 +29,17 @@ class Profile(models.Model):
 
 
 class Comment(models.Model):
-    text = \
-        models.CharField(max_length=500)
+    edu_material = \
+        models.ForeignKey(EduMaterial, on_delete=models.CASCADE)
 
     user = \
         models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    text = \
+        models.CharField(max_length=500)
+
+    date = \
+        models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'comment id{self.id} of user {self.user}'
@@ -48,6 +54,9 @@ class SubComment(models.Model):
 
     comment = \
         models.ForeignKey(Comment, on_delete=models.CASCADE)
+
+    date = \
+        models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'subcomment id{self.id} of user {self.user}'

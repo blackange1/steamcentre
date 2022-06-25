@@ -56,8 +56,96 @@
     <section class="content" id="content"></section>
     <section class="sidesection visibility" id="sidesection"></section>
 </main>
-<!-- <div class="comments">
-    <ul class="uk-comment-list">
+<!-- <ul class="uk-comment-list comments" id=""> -->
+        <!-- <li>
+            <article class="uk-comment uk-visible-toggle" tabindex="-1"></article>
+            <form>
+                <div class="uk-margin">
+                    <p><textarea class="uk-textarea" rows="5" placeholder="Залиште свій коментар" id="textarea_0"></textarea></p>
+                    <div class="uk-flex uk-flex-right">
+                        <a class="uk-link-muted" style="padding-right: 20px" onclick=saveNewComent("0")>Зберегти</a>
+                    </div>
+                </div>
+            </form>
+            </article>
+        </li> -->
+        <!-- <li id="wraper_comment_1">
+            <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                <header class="uk-comment-header uk-position-relative">
+                    <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
+                        </div>
+                        <div class="uk-width-expand">
+                            <h4 class="uk-comment-title uk-margin-remove">Volodymyr</h4>
+                            <p class="uk-comment-meta uk-margin-remove-top">12|06|2022</p>
+                        </div>
+                        <div class="uk-position-top-right uk-position-small">
+                            <a class="uk-link-muted" onclick="addSubComment(1)">Відповісти</a>
+                        </div>
+                    </div>
+                </header>
+                
+                <div class="uk-comment-body">
+                    <p id="comment_text_1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="uk-flex uk-flex-right">
+                    <a class="uk-link-muted" style="padding-right: 20px" id="1" onclick=editComment(1)>Редагувати</a>
+                    <a class="uk-link-muted" style="padding-right: 20px" onclick=deleteComment(1)>Видалити</a>
+                </div>
+            </article>
+            <ul id="sub_comments_">
+                <li>
+                    <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                        <header class="uk-comment-header uk-position-relative">
+                            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h4 class="uk-comment-title uk-margin-remove">Author</h4>
+                                    <p class="uk-comment-meta uk-margin-remove-top">12 days ago</p>
+                                </div>
+                            </div>
+                            <div class="uk-position-top-right uk-position-small "><a class="uk-link-muted">Відповісти</a></div>
+                        </header>
+                        <div class="uk-comment-body">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                        <header class="uk-comment-header uk-position-relative">
+                            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                    <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
+                                    <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">12 days ago</a></p>
+                                </div>
+                            </div>
+                            <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="#">Reply</a></div>
+                        </header>
+                        <div class="uk-comment-body">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadi</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <form>
+                        <div class="uk-margin">
+                            <textarea class="uk-textarea" rows="5" placeholder="введіть повідомлення"></textarea>
+                        </div>
+                    </form>
+                    <div class="uk-flex uk-flex-right">
+                        <a class="uk-link-muted" href="#" style="padding-right: 20px">Зберегтиати</a>
+                        <a class="uk-link-muted" href="#" style="padding-right: 20px">Видалити</a>
+                    </div>
+                </li>
+            </ul>
+        </li>
         <li>
             <article class="uk-comment uk-visible-toggle" tabindex="-1">
                 <header class="uk-comment-header uk-position-relative">
@@ -76,76 +164,411 @@
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 </div>
             </article>
-            <ul>
-                <li>
-                    <article class="uk-comment uk-visible-toggle" tabindex="-1">
-                        <header class="uk-comment-header uk-position-relative">
-                            <div class="uk-grid-medium uk-flex-middle" uk-grid>
-                                <div class="uk-width-auto">
-                                    <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
-                                </div>
-                                <div class="uk-width-expand">
-                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
-                                    <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">12 days ago</a></p>
-                                </div>
-                            </div>
-                            <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="#">Reply</a></div>
-                        </header>
-                        <div class="uk-comment-body">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="uk-comment uk-visible-toggle" tabindex="-1">
-                        <header class="uk-comment-header uk-position-relative">
-                            <div class="uk-grid-medium uk-flex-middle" uk-grid>
-                                <div class="uk-width-auto">
-                                    <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
-                                </div>
-                                <div class="uk-width-expand">
-                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
-                                    <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">12 days ago</a></p>
-                                </div>
-                            </div>
-                            <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="#">Reply</a></div>
-                        </header>
-                        <div class="uk-comment-body">
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </article>
-                </li>
-            </ul>
         </li>
     </ul>
-
-    <article class="uk-comment">
-        <header class="uk-comment-header">
-            <div class="uk-grid-medium uk-flex-middle" uk-grid>
-                <div class="uk-width-auto">
-                    <img class="uk-comment-avatar" src="/media/user_photos/23.png" width="80" height="80" alt="">
-                </div>
-                <div class="uk-width-expand">
-                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Author</a></h4>
-                    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                        <li><a href="#">12 days ago</a></li>
-                        <li><a href="#">Reply</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        <div class="uk-comment-body">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
-    </article>
-</div> -->
+    <br> -->
+    <ul class="uk-comment-list comments" id="comments"></ul>
+<style>
+    .uk-comment-avatar {
+        border-radius: 100%;
+        width: 70px;
+        height: 70px;
+    }
+    article {
+        border-top: 1px solid white;
+        padding-top: 10px;
+    }
+</style>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    axios.defaults.xsrfCookieName = 'csrftoken';
+    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
+    const deltaTime = 300;
+
     const id_material = {{ pk }}
 
     const print = (s) => {
         console.log(s)
     }
+
+    const onlySpace = (str) => {
+        for (let index = 0; index < str.length; index++) {
+            const ch = str[index];
+            if (ch !== ' ') {
+                return false
+            }     
+        }
+        return true
+    }
+    
+    const sleep = (ms) => {
+        ms += new Date().getTime();
+        while (new Date() < ms){}
+    } 
+
+    const isClassName = (obj, className) => {
+            for (let index = 0; index < obj.classList.length; index++) {
+                const element = obj.classList[index];
+                if (className === element) {
+                    return true
+                }
+            }
+            return false
+        }
+
+    const update_comment_db = (method, url, data={}) => {
+        let req = axios({
+                method: method,
+                url: url,
+                xsrfCookieName: 'csrftoken',
+                xsrfHeaderName: 'X-CSRFToken',
+                data: data,
+                headers: {
+                    'X-CSRFToken': 'csrftoken'
+                }
+        }).then((response) => {
+                const error = response.data['error']
+                if (error === 'is_anonymous') {
+                    window.location.href = '/accounts/login/'
+                }
+        });
+            return;
+        }
+
+    const saveNewComent = (idComment) => {
+        let textarea = document.getElementById('textarea_' + idComment)
+        if (textarea.value === '') {
+            textarea.placeholder = 'Поле не має бути пустим'
+            return
+        }
+        if (onlySpace(textarea.value)) {
+            textarea.value = ""
+            textarea.placeholder = 'Коментар не повинен складатися лише з пробілів'
+            return
+        }
+        if (textarea.value.length > 500) {
+            alert('Занадто довгий коментар. Максимум 500 символів')
+            return
+        }
+        // save in server post
+        // render comment
+        update_comment_db(
+            'post',
+            `/api/v1/edumaterials/${id_material}/comments/`,
+            {"text": textarea.value}
+        )
+        sleep(deltaTime)
+        renderComments()
+    }
+    const saveSubComment = (idComment) => {
+        let textarea = document.getElementById('textarea_0' + idComment)
+        if (textarea.value === '') {
+            textarea.placeholder = 'Поле не має бути пустим'
+            return
+        }
+        if (onlySpace(textarea.value)) {
+            textarea.value = ""
+            textarea.placeholder = 'Коментар не повинен складатися лише з пробілів'
+            return
+        }
+        if (textarea.value.length > 500) {
+            alert('Занадто довгий коментар. Максимум 500 символів')
+            return
+        }
+        update_comment_db(
+            'post',
+            `/api/v1/edumaterials/${id_material}/comments/${idComment}`,
+            {"text": textarea.value}
+        )
+        sleep(deltaTime)
+        renderSubComments(idComment)
+
+    }
+
+    const addSubComment = (idComment) => {
+
+        let obj = document.getElementById('wraper_comment_' + idComment)
+        let ul = obj.lastElementChild
+
+        tmp = ul.innerHTML
+        if (ul.firstElementChild) {
+            if (isClassName(ul.firstElementChild, 'write_comment')) {
+                return
+            }
+        }
+        
+
+        ul.innerHTML = `
+        <li class="write_comment">
+            <article class="uk-comment uk-visible-toggle" tabindex="-1"></article>
+            <form>
+                <div class="uk-margin">
+                    <p><textarea class="uk-textarea" rows="5" placeholder="Залиште свій коментар" id="textarea_0${idComment}"></textarea></p>
+                    <div class="uk-flex uk-flex-right">
+                        <a class="uk-link-muted" style="padding-right: 20px" onclick=saveSubComment(${idComment})>Зберегти</a>
+                    </div>
+                </div>
+            </form>
+            </article>
+        </li>
+        `
+        
+        ul.innerHTML += tmp
+        // sub_comments_
+    }
+    // addSubComment(1)
+
+    const editComment = (idComment, idSubComment=false) => {
+        let path = idComment
+        if (idSubComment) {
+            path = idComment + '_' + idSubComment
+        }
+
+        let a = document.getElementById(path)
+        let p = document.getElementById('comment_text_' + path)
+
+        if (a.textContent === 'Зберегти') {
+            const textarea = document.getElementById(`textarea_${path}`)
+            
+            if (textarea.value === '') {
+                textarea.placeholder = 'Поле не має бути пустим'
+                return
+            }
+            if (onlySpace(textarea.value)) {
+                textarea.value = ""
+                textarea.placeholder = 'Коментар не повинен складатися лише з пробілів'
+                return
+            }
+            if (textarea.value.length > 500) {
+                alert('Занадто довгий коментар. Максимум 500 символів')
+                return
+            }
+            if (idSubComment) {
+                update_comment_db(
+                    'put',
+                    `/api/v1/edumaterials/${id_material}/comments/${idComment}/${idSubComment}`,
+                    {"text": textarea.value}
+                )
+            } else {
+                update_comment_db(
+                    'put',
+                    `/api/v1/edumaterials/${id_material}/comments/${idComment}`,
+                    {"text": textarea.value}
+                )
+            }
+        
+            a.textContent = 'Редагувати'
+            p.innerHTML = textarea.value
+
+            return
+        }
+        a.textContent = 'Зберегти'
+        p.innerHTML = `<textarea class="uk-textarea" rows="5" id="textarea_${path}">${p.textContent}</textarea>`
+
+        // saveComent(id_comment)
+    }
+
+    const deleteComment = (idComment, idSubComment=false) => {
+        let path = idComment
+        if (idSubComment) {
+            path = idComment + '_' + idSubComment
+        }
+
+        let obj = document.getElementById('wraper_comment_' + path)
+        if (confirm('Ви дійсно бажаєте видалити цей коментар?')) {
+            if (idSubComment) {
+                update_comment_db(
+                    'delete',
+                    `/api/v1/edumaterials/0/comments/${idComment}/${idSubComment}`
+                )
+            } else {
+                update_comment_db(
+                    'delete',
+                    `/api/v1/edumaterials/0/comments/${idComment}`
+                )
+            }
+            obj.innerHTML = ''
+        }
+    }
+
+    const renderSubComments = (idComment) => {
+        let ul = document.getElementById('sub_comments_' + idComment)
+        ul.innerHTML = ''
+
+
+        fetchRes = fetch(`/api/v1/edumaterials/${id_material}/comments/${idComment}`);
+        fetchRes.then(res =>
+            res.json()).then(d => {
+                subComments = d["sub_comments"]
+                for (let index = 0; index < subComments.length; index++) {
+                    const subElement = subComments[index];
+
+                    const subData = subElement["date"]
+                    const subFullName = subElement["full_name"]
+                    const idSubComment = subElement["id_sub_comments"]
+                    const mySubComment = subElement["my_comment"]
+                    const subText = subElement["text"]
+                    const subUrlImg = subElement["url_img"]
+                        
+                    let buttonsEditDel = ''
+                    if (mySubComment) {
+                        buttonsEditDel = `
+                                <div class="uk-flex uk-flex-right">
+                                    <a class="uk-link-muted" style="padding-right: 20px" id="${idComment}_${idSubComment}" onclick="editComment(${idComment}, ${idSubComment});">Редагувати</a>
+                                    <a class="uk-link-muted" style="padding-right: 20px" onclick="deleteComment(${idComment}, ${idSubComment});">Видалити</a>
+                                </div>
+                            `
+                    }
+
+                    ul.innerHTML += `
+                            <li id="wraper_comment_${idComment}_${idSubComment}">
+                                <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                                    <header class="uk-comment-header uk-position-relative">
+                                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                            <div class="uk-width-auto">
+                                                <img class="uk-comment-avatar" src="${subUrlImg}" width="80" height="80" alt="">
+                                            </div>
+                                            <div class="uk-width-expand">
+                                                <h4 class="uk-comment-title uk-margin-remove">${subFullName}</h4>
+                                                <p class="uk-comment-meta uk-margin-remove-top">${subData}</p>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p id="comment_text_${idComment}_${idSubComment}">${subText}</p>
+                                    </div>
+                                    ${buttonsEditDel}
+                                </article>
+                            </li>
+                        `
+                    }
+            })
+    }
+
+    const renderComments = () => {
+        let comments = document.getElementById('comments')
+
+        comments.innerHTML = `
+        <li>
+            <article class="uk-comment uk-visible-toggle" tabindex="-1"></article>
+            <form>
+                <div class="uk-margin">
+                    <p><textarea class="uk-textarea" rows="5" placeholder="Залиште свій коментар" id="textarea_0"></textarea></p>
+                    <div class="uk-flex uk-flex-right">
+                        <a class="uk-link-muted" style="padding-right: 20px" onclick=saveNewComent("0")>Зберегти</a>
+                    </div>
+                </div>
+            </form>
+            </article>
+        </li>
+        `
+
+        fetchRes = fetch(`/api/v1/edumaterials/${id_material}/comments/`);
+        fetchRes.then(res =>
+            res.json()).then(d => {
+                const commentsData = d['comments']
+                for (let index = 0; index < commentsData.length; index++) {
+                    const element = commentsData[index];
+                    const idComment = element["id_comments"]
+                    const fullName = element["full_name"]
+                    const date = element["date"]
+                    const myComment = element["my_comment"]
+                    const text = element["text"]
+                    const urlImg = element["url_img"]
+                    const subComments = element["sub_comments"]
+
+                    contentSubComments = ''
+
+                    for (let index = 0; index < subComments.length; index++) {
+                        const subElement = subComments[index];
+                        const subData = subElement["date"]
+                        const subFullName = subElement["full_name"]
+                        const idSubComments = subElement["id_sub_comments"]
+                        const mySubComment = subElement["my_comment"]
+                        const subText = subElement["text"]
+                        const subUrlImg = subElement["url_img"]
+                        
+                        let buttonsEditDel = ''
+                        if (mySubComment) {
+                            buttonsEditDel = `
+                                <div class="uk-flex uk-flex-right">
+                                    <a class="uk-link-muted" style="padding-right: 20px" id="${idComment}_${idSubComments}" onclick="editComment(${idComment}, ${idSubComments});">Редагувати</a>
+                                    <a class="uk-link-muted" style="padding-right: 20px" onclick="deleteComment(${idComment}, ${idSubComments});">Видалити</a>
+                                </div>
+                            `
+                        }
+
+                        contentSubComments += `
+                            <li id="wraper_comment_${idComment}_${idSubComments}">
+                                <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                                    <header class="uk-comment-header uk-position-relative">
+                                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                            <div class="uk-width-auto">
+                                                <img class="uk-comment-avatar" src="${subUrlImg}" width="80" height="80" alt="">
+                                            </div>
+                                            <div class="uk-width-expand">
+                                                <h4 class="uk-comment-title uk-margin-remove">${subFullName}</h4>
+                                                <p class="uk-comment-meta uk-margin-remove-top">${date}</p>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="uk-comment-body">
+                                        <p id="comment_text_${idComment}_${idSubComments}">${subText}</p>
+                                    </div>
+                                    ${buttonsEditDel}
+                                </article>
+                            </li>
+                        `
+                    }
+                    
+                    let buttonsEditDel = ''
+                    if (myComment) {
+                        buttonsEditDel = `
+                            <div class="uk-flex uk-flex-right">
+                                <a class="uk-link-muted" style="padding-right: 20px" id="${idComment}" onclick=editComment(${idComment})>Редагувати</a>
+                                <a class="uk-link-muted" style="padding-right: 20px" onclick=deleteComment(${idComment})>Видалити</a>
+                            </div>
+                        `
+                    }
+                    comments.innerHTML += `
+                        <li id="wraper_comment_${idComment}">
+                            <article class="uk-comment uk-visible-toggle" tabindex="-1">
+                                <header class="uk-comment-header uk-position-relative">
+                                    <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                        <div class="uk-width-auto">
+                                            <img class="uk-comment-avatar" src="${urlImg}" width="80" height="80" alt="">
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <h4 class="uk-comment-title uk-margin-remove">${fullName}</h4>
+                                            <p class="uk-comment-meta uk-margin-remove-top">${date}</p>
+                                        </div>
+                                        <div class="uk-position-top-right uk-position-small">
+                                            <a class="uk-link-muted" onclick=addSubComment(${idComment})>Відповісти</a>
+                                        </div>
+                                    </div>
+                                </header>
+                                
+                                <div class="uk-comment-body">
+                                    <p id="comment_text_${idComment}">${text}</p>
+                                </div>
+                                ${buttonsEditDel}
+                            </article>
+                            <ul id="sub_comments_${idComment}">
+                                ${contentSubComments}
+                            </ul>
+                        </li>
+                    `
+
+                }
+            })
+    }
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+    
 
     function click_favorite(id_material) {
         add_favorite({'favorite_id': id_material})
@@ -156,7 +579,6 @@
     function click_like(id_material) {
         add_favorite({'like_id': id_material})
         like = document.getElementById(`like_${id_material}`)
-        print(like)
         
         let isClassName = false
         for (let index = 0; index < like.classList.length; index++) {
@@ -177,8 +599,8 @@
 
     //////////
     // edit_msg
-    axios.defaults.xsrfCookieName = 'csrftoken';
-    axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+    // axios.defaults.xsrfCookieName = 'csrftoken';
+    // axios.defaults.xsrfHeaderName = 'X-CSRFToken';
     
     function update_db(url) {
         return function(data) {
@@ -192,7 +614,7 @@
                 'X-CSRFToken': 'csrftoken'
             }
         }).then((response) => {
-            console.log(response)
+            // console.log(response)
         });
         return;
         }
@@ -265,7 +687,6 @@
                 div_description = ''
                 
                 if (detailed_description === '') {
-                    // print(array)
                     for (let index = 0; index < description.length; index++) {
                         const element = description[index];
                         div_description += `<p>${element}</p>`
@@ -287,9 +708,10 @@
     // end renderContent
     ////////////////
 
-
 document.addEventListener('DOMContentLoaded', function(){
         renderContent()
+        renderComments()
+
     }, false);
 </script>
 
