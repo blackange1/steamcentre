@@ -75,7 +75,7 @@ class EduMaterial(models.Model):
         models.ManyToManyField(EduСategory, verbose_name='категорії')
 
     color = \
-        models.ForeignKey(Color, on_delete=models.CASCADE, null=True, blank=True, verbose_name='колір')
+        models.ForeignKey(Color, on_delete=models.CASCADE, verbose_name='колір')
 
     img = \
         models.ImageField(upload_to='edu_material', verbose_name='зображення')
@@ -107,6 +107,9 @@ class EduMaterial(models.Model):
 
     like = \
         models.PositiveIntegerField(default=0)
+
+    count_comments = \
+        models.PositiveIntegerField(default=0, verbose_name='к-ть коментарів')
 
     @property
     def img_preview(self):

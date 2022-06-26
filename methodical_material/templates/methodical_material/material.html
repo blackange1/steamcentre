@@ -19,6 +19,7 @@
             </div>
         </div>
         <div id="method"></div>
+        <ul class="uk-pagination uk-flex-center" uk-margin id="pagination"></ul>
     </section>
     <section class="navtegs visibility">
         <div class="navtegs_conteiner">
@@ -38,6 +39,9 @@
             color: red;
         }
     </style>
+    <script>
+        
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
 
@@ -84,7 +88,6 @@
         function click_like(id_material) {
             add_favorite({'like_id': id_material})
             like = document.getElementById(`like_${id_material}`)
-            print(like)
             
             let isClassName = false
             for (let index = 0; index < like.classList.length; index++) {
@@ -124,7 +127,7 @@
             }
         }
 
-        const chooseCategory = function() {
+        const chooseCategory = function(page=1) {
             listCategory = []
             const form = document.getElementById('form')
             const nodeListCheckboxs = form.querySelectorAll('input[type="checkbox"]')
@@ -135,9 +138,9 @@
                 }
             }
             if (listCategory.length === 0) {
-                renderMaterials()
+                renderMaterials({}, page)
             } else {
-                renderMaterials({'categories': listCategory})
+                renderMaterials({'categories': listCategory}, page)
             }
         }
 
@@ -185,40 +188,79 @@
                 })
         } 
 
-        const renderMaterials = function(context={}) {
+        const renderMaterials = function(context={}, page=1) {
             let method = document.getElementById('method');
             method.innerHTML = ''
+            let pagination = document.getElementById('pagination');
+            pagination.innerHTML = ''
 
-            let fetchRes = null
-            if (Object.keys(context).length === 0) {
-                fetchRes = fetch("/api/v1/edumaterials/");
-            } else {
-                url = '/api/v1/edumaterials/?'
-                let s = new URLSearchParams(context)
-                print(url + s)
-                fetchRes = fetch(url + s.toString())
-            }
+            url = '/api/v1/edumaterials/?'
+            let copyContext = Object.assign({}, context)
+            copyContext.page = page;
+            const contextURL = new URLSearchParams(copyContext)
+            let fetchRes = fetch(url + contextURL)
+            
+            
             fetchRes.then(res =>
                 res.json()).then(d => {
+                    const countPage = d['count_page']
+                    const page = d['page']
+ 
+                    // 1 ... 4 5 6 7 8 9>
+                    // 1 ... 3 4 5 6 7 ... 9 >
+                    if (countPage != 1) {
+                        if (page !== 1 && page !== undefined) {
+                        pagination.innerHTML += `<li><a onclick="chooseCategory(${page - 1});"><span uk-pagination-previous></span></a></li>`
+                    }
+
+                    let startIndex = 1
+                    if (page - 2 > 2) {
+                        startIndex = page - 2
+                    }
+                    if (startIndex != 1) {
+                        pagination.innerHTML += '<li><a onclick="chooseCategory(1);">1</a></li>'
+                        pagination.innerHTML += '<li class="uk-disabled"><span>...</span></li>'
+                    }
+                    let endIndex = countPage
+                    if (page + 2 < countPage - 1) {
+                        endIndex = page + 2
+                    }
+                    for (let index = startIndex; index <= endIndex; index++) {
+                        if (page == index) {
+                            pagination.innerHTML += `<li class="uk-active"><span>${index}</span></li>`
+                            continue
+                        }
+                        pagination.innerHTML += `<li><a onclick="chooseCategory(${index});">${index}</a></li>`
+                    }
+                    if (endIndex != countPage) {
+                        pagination.innerHTML += '<li class="uk-disabled"><span>...</span></li>'
+                        pagination.innerHTML += `<li><a onclick="chooseCategory(${countPage});">${countPage}</a></li>`
+
+                    }
+                    if (page !== countPage) {
+                        pagination.innerHTML += `<li><a onclick="chooseCategory(${page + 1});"><span uk-pagination-next></span></a></li>`
+                    }
+                    }
+                    
                     const matirials = d['matirial']
                     for (let index = 0; index < matirials.length; index++) {
                         const matirial = matirials[index]
-                        const id_matirial = matirial['id']
+                        const idMatirial = matirial['id']
                         const name = matirial['name']
-                        const src_img = matirial['img']
+                        const srcImg = matirial['img']
                         const description = matirial['description']
                         const like = matirial['like']
-                        const link_download = matirial['link_download']
+                        const linkDownload = matirial['link_download']
                         const source = matirial['source']
                         const color = matirial['color']
-                        const edu_сategory = matirial['edu_сategory']
+                        const countComments = matirial['count_comments']
+                        const eduCategory = matirial['edu_сategory']
                         const isFavorite = matirial['is_favorite']
                         const isLiked = matirial['is_liked']
-                        print(isLiked)
 
                         let batton_category = ''
-                        for (let index = 0; index < edu_сategory.length; index++) {
-                            const edu_element = edu_сategory[index];
+                        for (let index = 0; index < eduCategory.length; index++) {
+                            const edu_element = eduCategory[index];
                             batton_category += `
                                 <a href="#materials">
                                     <button 
@@ -243,8 +285,8 @@
                         if (source) {
                             div_source += `<span class="like-comment"><a href="${source}" target="_blank">Джерело</a></span>`
                         }
-                        if (link_download) {
-                            div_source += `<span class="like-comment"><a href="${link_download}" target="_blank" uk-icon="cloud-download"></a></span>`
+                        if (linkDownload) {
+                            div_source += `<span class="like-comment"><a href="${linkDownload}" target="_blank" uk-icon="cloud-download"></a></span>`
                         }
 
                         let classFavorite = ""
@@ -256,20 +298,20 @@
                             classLiked = ' liked'
                         }
                         div_source += `
-                            <span class="like-comment${classFavorite}" id="bookmark_${id_matirial}" uk-icon="bookmark" onclick=click_favorite(${id_matirial})></span>
-                            <span class="like-comment"><a href="#" uk-icon="comments"></a> 20</span>
-                            <span class="like-comment ${classLiked}" id="like_${id_matirial}" onclick=click_like(${id_matirial})><span uk-icon="heart"></span><span id="count_${id_matirial}">${like}</span></span>
+                            <span class="like-comment${classFavorite}" id="bookmark_${idMatirial}" uk-icon="bookmark" onclick=click_favorite(${idMatirial})></span>
+                            <span class="like-comment"><a href="/methodical_material/${idMatirial}#comments" uk-icon="comments"></a><span> </span>${countComments}</span>
+                            <span class="like-comment ${classLiked}" id="like_${idMatirial}" onclick=click_like(${idMatirial})><span uk-icon="heart"></span><span id="count_${idMatirial}"><span> </span>${like}</span></span>
                         `
                         div_source += '</div>'
                         
                         method.innerHTML += `
                             <article class="uk-article uk-animation-slide-left">
                                 <div class="article_conteiner">
-                                    <a href="${id_matirial}" target="_blank">
-                                        <img class="article_img uk-align-left" src="${src_img}" alt="">
+                                    <a href="${idMatirial}" target="_blank">
+                                        <img class="article_img uk-align-left" src="${srcImg}" alt="">
                                     </a>
                                     <div class="article_content" style="border-color: #${color};">
-                                        <a href="${id_matirial}"><h2 class="article_headline">${name}</h2></a>
+                                        <a href="${idMatirial}"><h2 class="article_headline">${name}</h2></a>
                                         <div class="article_tags">
                                             ${batton_category}
                                         </div>

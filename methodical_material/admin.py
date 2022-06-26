@@ -8,9 +8,10 @@ class EduMaterialAdmin(admin.ModelAdmin):
         'name',
         'color_preview',
         'like',
+        'count_comments',
         'img_preview',
     )
-    exclude = ('like',)
+    exclude = ('like', 'count_comments',)
     list_filter = ('edu_сategory',)
     readonly_fields = ('img_preview',)
 

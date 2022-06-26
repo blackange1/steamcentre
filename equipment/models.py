@@ -48,7 +48,7 @@ class Product(models.Model):
     number_of_products = \
         models.PositiveSmallIntegerField(
             verbose_name='номер',
-            help_text='Для кожного набору номер має бути унікальний, показ наборів відбувається за зростанням даного номеру.'
+            help_text='Для кожного набору лобораторії номер має бути унікальний, показ наборів відбувається за зростанням даного номеру.'
         )
 
     name = \

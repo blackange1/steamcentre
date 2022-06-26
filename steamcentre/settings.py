@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # providers
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 
     'rest_framework',
@@ -166,45 +166,27 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         }
     },
-    'facebook':
-        {
-            'METHOD': 'oauth2',
-            'SCOPE': ['email', 'public_profile', 'user_friends'],
-            'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-            'FIELDS': [
-                'id',
-                'email',
-                'name',
-                'first_name',
-                'last_name',
-                'verified',
-                'locale',
-                'timezone',
-                'link',
-                'gender',
-                'updated_time'],
-            'EXCHANGE_TOKEN': True,
-            'LOCALE_FUNC': lambda request: 'en_US',
-            'VERIFIED_EMAIL': False,
-            'VERSION': 'v2.4'
-        }
+    # 'facebook':
+    #     {
+    #         'METHOD': 'oauth2',
+    #         'SCOPE': ['email', 'public_profile', 'user_friends'],
+    #         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+    #         'FIELDS': [
+    #             'id',
+    #             'email',
+    #             'name',
+    #             'first_name',
+    #             'last_name',
+    #             'verified',
+    #             'locale',
+    #             'timezone',
+    #             'link',
+    #             'gender',
+    #             'updated_time'],
+    #         'EXCHANGE_TOKEN': True,
+    #         'LOCALE_FUNC': lambda request: 'en_US',
+    #         'VERIFIED_EMAIL': False,
+    #         'VERSION': 'v2.4'
+    #     }
 }
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.AllowAny',
-#     ]
-# }
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.SessionAuthentication',
-#     ),
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.AllowAny',
-#         # 'rest_framework.permissions.IsAuthenticated',
-#         # 'rest_framework.permissions.IsAdminUser',
-#      ),
-#     'PAGE_SIZE': 100,
-#     'DEFAULT_FILTER_BACKENDS': (
-#         'rest_framework.filters.DjangoFilterBackend',
-#     ),
-# }
+PAGE_SIZE = 8

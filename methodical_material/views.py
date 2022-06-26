@@ -2,7 +2,7 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from steamcentre.settings import PAGE_SIZE
 from .models import EduMaterial, EduСategory, Color
 from .serializers import OneEduMaterialSerializer, ColorSerializer
 
@@ -59,6 +59,7 @@ class EduMaterialAPIView(APIView):
             'link_download': obj.link_download,
             'source': obj.source,
             'like': obj.like,
+            'count_comments': obj.count_comments,
             'is_favorite': is_favorite,
             'is_liked': is_liked,
         }
@@ -68,7 +69,27 @@ class EduMaterialAPIView(APIView):
 
         return res
 
+    @staticmethod
+    def __get_response_pagination(lst, page=1, page_size=PAGE_SIZE):
+        end_position = page * page_size
+        count_page = len(lst) // page_size + int(bool(len(lst) % page_size))
+        if count_page < page:
+            return []
+        return {
+            'count_page': count_page,
+            'page': page,
+            'matirial': lst[end_position - page_size:end_position]
+        }
+
     def get(self, request, pk=None):
+        page = 1
+        try:
+            page = int(dict(request.query_params).get('page', [1])[0])
+        except:
+            pass
+
+        print(page, type(page))
+
         all_matirial = False
         if hasattr(request.user, 'profile'):
             profile = request.user.profile
@@ -78,13 +99,6 @@ class EduMaterialAPIView(APIView):
 
         # pass instants pk
         if pk:
-            # materials = EduMaterial.objects.filter(id=pk)
-            # if materials:
-            #     m = materials[0]
-            #     return Response(
-            #         OneEduMaterialSerializer(m).data
-            #     )
-            # return Response({'error': 'not fined'})
             materials = EduMaterial.objects.filter(pk=pk)
             if materials:
                 m = materials[0]
@@ -109,7 +123,7 @@ class EduMaterialAPIView(APIView):
                     # for edu_material in user.profile.collection_material.all():
                     for edu_material in all_matirial[index]:
                         lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
-            return Response({'matirial': lst})
+            return Response(self.__get_response_pagination(lst, page))
 
         # ?categories=3D&categories=Tinkercad
         set_id = set()
@@ -123,7 +137,7 @@ class EduMaterialAPIView(APIView):
                         continue
                     set_id.add(edu_material.id)
                     lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
-            return Response({'matirial': lst})
+            return Response(self.__get_response_pagination(lst, page))
 
         # ?words=3
         words = dict(request.query_params).get('words', None)
@@ -136,12 +150,13 @@ class EduMaterialAPIView(APIView):
             q_set.update(q_description)
             for edu_material in q_set:
                 lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
-            return Response({'matirial': lst})
+            return Response(self.__get_response_pagination(lst, page))
 
         for edu_material in EduMaterial.objects.all():
             lst.append(self.__get_dict_edu_material(edu_material, all_matirial))
 
-        return Response({'matirial': lst})
+        self.__get_response_pagination(lst)
+        return Response(self.__get_response_pagination(lst, page))
 
 
 class EduСategoryAPIView(APIView):

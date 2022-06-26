@@ -64,11 +64,11 @@ class ModuleOfCourses(models.Model):
     number_of_module = \
         models.PositiveSmallIntegerField(
             verbose_name='номер',
-            help_text='Для кожного модуля номер має бути унікальний, показ модулів відбувається за зростанням даного номеру.'
+            help_text='Для кожного модуля в курсі номер має бути унікальний, показ модулів відбувається за зростанням даного номеру.'
         )
 
     description = \
-        models.TextField(verbose_name='опис')
+        models.TextField(verbose_name='опис', help_text='Кожна нова тема має бути введена з нового рядка')
 
     img_module = \
         models.ImageField(upload_to='modules', verbose_name='зображення')

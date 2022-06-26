@@ -162,6 +162,8 @@ class CommentsAPIView(APIView):
                 user=user,
                 comment=comment,
             )
+            comment.edu_material.count_comments += 1
+            comment.edu_material.save()
             return Response(data)
 
         try:
@@ -174,6 +176,8 @@ class CommentsAPIView(APIView):
             user=user,
             text=text
         )
+        edu_material.count_comments += 1
+        edu_material.save()
         return Response(data)
 
     def put(self, request, pk_material, pk_comment=None, pk_sub_comment=None):
@@ -212,6 +216,8 @@ class CommentsAPIView(APIView):
                 sub_comment = SubComment.objects.get(pk=pk_sub_comment)
                 if sub_comment.user != request.user:
                     return Response({"error": "user don't have rights"})
+                sub_comment.comment.edu_material.count_comments -= 1
+                sub_comment.comment.edu_material.save()
                 sub_comment.delete()
                 return Response({'sub_comment': 'deleted_comment'})
             except:
@@ -220,6 +226,8 @@ class CommentsAPIView(APIView):
             comment = Comment.objects.get(pk=pk_comment)
             if comment.user != request.user:
                 return Response({"error": "user don't have rights"})
+            comment.edu_material.count_comments -= 1 + comment.subcomment_set.count()
+            comment.edu_material.save()
             comment.delete()
             return Response({'comment': 'deleted_comment'})
         except:
