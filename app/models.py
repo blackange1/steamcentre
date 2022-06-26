@@ -7,11 +7,11 @@ from django.utils.html import mark_safe
 
 class MainSlider(models.Model):
     title = \
-        models.CharField(max_length=200)
+        models.CharField(max_length=200, verbose_name='заголовок')
     text = \
-        models.TextField()
+        models.TextField(verbose_name='Опис')
     img = \
-        models.ImageField(upload_to='main_slider')
+        models.ImageField(upload_to='main_slider', verbose_name='Зображення')
 
     def __str__(self):
         return self.title

@@ -14,6 +14,9 @@ class EduMaterialAdmin(admin.ModelAdmin):
     list_filter = ('edu_сategory',)
     readonly_fields = ('img_preview',)
 
+    search_fields = ('name', 'description')
+    search_help_text = 'пошук здійснюється по назві та короткому опису'
+
     def img_preview(self, obj):
         return obj.img_preview
 

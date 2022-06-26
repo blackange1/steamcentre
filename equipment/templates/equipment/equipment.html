@@ -11,7 +11,7 @@
     </header>
     <main class="main" id="main">
         {% for lab in labs %}
-        <div class="lab_headline uk-text-center" style="background: {{ lab.background_color }}">{{lab.name}}</div>
+        <div class="lab_headline uk-text-center" style="background: #{{ lab.background_color }};">{{lab.name}}</div>
         <div class="uk-panel lab_content">
             <img class="uk-align-{{ lab.position }} uk-margin-remove-adjacent lab_img" src="{{ lab.img }}"
                  alt="{{ lab.name }}">
@@ -30,7 +30,7 @@
                             <img class="uk-transition-scale-up uk-transition-opaque" src="{{ product.img }}"
                                  alt="{{ product.name }}">
                             {% if product.count %}
-                            <div class="resource_count" style="background: {{ lab.background_color }}">
+                            <div class="resource_count" style="background: #{{ lab.background_color }};">
                                 {{ product.count }}
                             </div>
                             {% endif %}

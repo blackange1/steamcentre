@@ -9,7 +9,7 @@
 
 <main class="main">
     {% for course in courses %}
-    <div class="header_curse box" id="course_{{ course.id }}" style="background: {{ course.background_color }};">
+    <div class="header_curse box" id="course_{{ course.id }}" style="background: #{{ course.background_color }};">
         <div uk-grid>
             <div class="uk-width-1-2@s uk-flex uk-flex-column" style="justify-content: center;">
                 <h1 class="uk-text-center">{{ course.name }}</h1>

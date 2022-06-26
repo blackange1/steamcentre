@@ -31,6 +31,10 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = (
         'lab',
     )
+
+    search_fields = ('name',)
+    search_help_text = 'пошук здійснюється по назві'
+
     readonly_fields = ('img_preview',)
 
     def img_preview(self, obj):

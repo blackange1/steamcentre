@@ -7,19 +7,42 @@ from django.utils.html import mark_safe
 
 class Courses(models.Model):
     number_of_courses = \
-        models.PositiveSmallIntegerField()
+        models.PositiveSmallIntegerField(
+            verbose_name='номер',
+            help_text="""
+                Для кожного курсу номер має бути унікальний,
+                 показ курсів відбувається за зростанням даного номеру.
+            """
+        )
     name = \
-        models.CharField(max_length=200)
+        models.CharField(max_length=200, verbose_name='назва')
+
     age_of_student = \
-        models.CharField(max_length=50)
+        models.CharField(
+            max_length=50,
+            verbose_name='вік учнів',
+            help_text="Приклад: 9-10 років"
+        )
+
     max_count_of_students = \
-        models.CharField(max_length=50)
+        models.CharField(
+            max_length=50,
+            verbose_name='максимальна кількість учнів',
+            help_text="Максимальна кількість яка може навчатись на цьому курсі. Приклад: 8 учнів"
+        )
+
     background_color = \
-        models.CharField(max_length=20)
+        models.CharField(
+            max_length=6,
+            help_text='Значення даного поля має бути записане в 16-й системі, #(решітку) прописувати не варто. Приклад: ff00ee',
+            verbose_name='Колір фону'
+        )
+
     img_course = \
-        models.ImageField(upload_to='courses')
+        models.ImageField(upload_to='courses', verbose_name='Зодраження')
+
     description = \
-        models.TextField()
+        models.TextField(verbose_name='Опис')
 
     def __str__(self):
         return self.name
@@ -33,15 +56,22 @@ class Courses(models.Model):
 
 class ModuleOfCourses(models.Model):
     courses = \
-        models.ForeignKey(Courses, on_delete=models.CASCADE)
+        models.ForeignKey(Courses, on_delete=models.CASCADE, verbose_name='курс')
+
     name = \
-        models.CharField(max_length=200)
+        models.CharField(max_length=200, verbose_name='назва')
+
     number_of_module = \
-        models.PositiveSmallIntegerField()
+        models.PositiveSmallIntegerField(
+            verbose_name='номер',
+            help_text='Для кожного модуля номер має бути унікальний, показ модулів відбувається за зростанням даного номеру.'
+        )
+
     description = \
-        models.TextField()
+        models.TextField(verbose_name='опис')
+
     img_module = \
-        models.ImageField(upload_to='modules')
+        models.ImageField(upload_to='modules', verbose_name='зображення')
 
     def __str__(self):
         return f'{self.courses.name} | Модуль {self.number_of_module} {self.name}'

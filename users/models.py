@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+from django.utils.html import mark_safe
+
 from methodical_material.models import EduMaterial
 
 
@@ -16,16 +18,19 @@ class Profile(models.Model):
     liked = \
         models.ManyToManyField(EduMaterial, related_name='liked')
 
+    @property
+    def img_preview(self):
+        if self.img:
+            return mark_safe(f'<img src="{self.img.url}" width="100" height="100" />')
+        return mark_safe(f'<img src="/static/img/default/user.jpg" width="100" height="100" />')
+
+
+    def __str__(self):
+        return self.name
+
+
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
-
-
-# Favorite
-# class UserCollectionMaterial(models.Model):
-#     user = \
-#         models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-#     material = \
-#         models.ManyToManyField(EduMaterial)
 
 
 class Comment(models.Model):
@@ -39,7 +44,7 @@ class Comment(models.Model):
         models.CharField(max_length=500)
 
     date = \
-        models.DateTimeField(auto_now=True)
+        models.DateTimeField(auto_now=True, verbose_name='дата оновлення')
 
     def __str__(self):
         return f'comment id{self.id} of user {self.user}'
@@ -56,7 +61,7 @@ class SubComment(models.Model):
         models.ForeignKey(Comment, on_delete=models.CASCADE)
 
     date = \
-        models.DateTimeField(auto_now=True)
+        models.DateTimeField(auto_now=True, verbose_name='дата оновлення')
 
     def __str__(self):
         return f'subcomment id{self.id} of user {self.user}'

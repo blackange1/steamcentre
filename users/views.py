@@ -25,12 +25,17 @@ def user_info(request, username):
         user.save()
         if request.FILES:
             if profile:
-                path_img = profile.img.url.split('/')[-1]
-                BASE_DIR.joinpath(MEDIA_ROOT).joinpath('user_photos').joinpath(path_img).unlink()
-                profile.delete()
+                try:
+                    path_img = profile.img.url.split('/')[-1]
+                    BASE_DIR.joinpath(MEDIA_ROOT).joinpath('user_photos').joinpath(path_img).unlink()
+                except:
+                    pass
+                profile.img = request.FILES['img']
+                profile.save()
 
-            Profile.objects.create(user=request.user, img=request.FILES['img'])
-            massages.append('Фото завантажується. Перезавантажте сторінку')
+            else:
+                Profile.objects.create(user=request.user, img=request.FILES['img'])
+            # massages.append('Фото завантажується. Перезавантажте сторінку')
 
         url_photo = ''
         if profile:
@@ -39,10 +44,12 @@ def user_info(request, username):
         massages.append('Дані збережено')
         return render(request, 'users/user_info.html', context={'url_photo': url_photo, 'massages': massages})
 
-    url_photo = ''
-    if profile:
-        if profile.img:
-            url_photo = profile.img.url
+    url_photo = None
+    try:
+        url_photo = profile.img.url
+    except:
+        url_photo = ''
+
     return render(request, 'users/user_info.html', context={'url_photo': url_photo, 'massages': massages})
 
 

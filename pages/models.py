@@ -7,9 +7,12 @@ from django.utils.html import mark_safe
 
 class Page(models.Model):
     link = \
-        models.SlugField(max_length=50)
+        models.SlugField(max_length=50, verbose_name='посилання', help_text='Посилання не додається автоматично до меню. Приклад: mobile_lab')
     html_code = \
-        models.TextField()
+        models.TextField(
+            verbose_name='HTML код сторінки',
+            help_text='Контент який буде вставлений між HEADER та FOOTER'
+        )
 
     def __str__(self):
         return self.link
@@ -17,9 +20,9 @@ class Page(models.Model):
 
 class Image(models.Model):
     name = \
-        models.CharField(max_length=50, null=True, blank=True)
+        models.CharField(max_length=50, null=True, blank=True, verbose_name='назва')
     img = \
-        models.ImageField(upload_to='pages')
+        models.ImageField(upload_to='pages', verbose_name='зображення')
 
     date_create = \
         models.DateTimeField(auto_now=True)
