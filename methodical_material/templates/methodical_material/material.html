@@ -210,7 +210,7 @@
                     // 1 ... 3 4 5 6 7 ... 9 >
                     if (countPage != 1) {
                         if (page !== 1 && page !== undefined) {
-                        pagination.innerHTML += `<li><a onclick="chooseCategory(${page - 1});"><span uk-pagination-previous></span></a></li>`
+                        pagination.innerHTML += `<li><a href="#materials" onclick="chooseCategory(${page - 1});"><span uk-pagination-previous></span></a></li>`
                     }
 
                     let startIndex = 1
@@ -218,7 +218,7 @@
                         startIndex = page - 2
                     }
                     if (startIndex != 1) {
-                        pagination.innerHTML += '<li><a onclick="chooseCategory(1);">1</a></li>'
+                        pagination.innerHTML += '<li><a href="#materials" onclick="chooseCategory(1);">1</a></li>'
                         pagination.innerHTML += '<li class="uk-disabled"><span>...</span></li>'
                     }
                     let endIndex = countPage
@@ -227,22 +227,30 @@
                     }
                     for (let index = startIndex; index <= endIndex; index++) {
                         if (page == index) {
-                            pagination.innerHTML += `<li class="uk-active"><span>${index}</span></li>`
+                            pagination.innerHTML += `<li href="#materials" class="uk-active"><span>${index}</span></li>`
                             continue
                         }
-                        pagination.innerHTML += `<li><a onclick="chooseCategory(${index});">${index}</a></li>`
+                        pagination.innerHTML += `<li><a href="#materials" onclick="chooseCategory(${index});">${index}</a></li>`
                     }
                     if (endIndex != countPage) {
                         pagination.innerHTML += '<li class="uk-disabled"><span>...</span></li>'
-                        pagination.innerHTML += `<li><a onclick="chooseCategory(${countPage});">${countPage}</a></li>`
+                        pagination.innerHTML += `<li><a href="#materials" onclick="chooseCategory(${countPage});">${countPage}</a></li>`
 
                     }
                     if (page !== countPage) {
-                        pagination.innerHTML += `<li><a onclick="chooseCategory(${page + 1});"><span uk-pagination-next></span></a></li>`
+                        pagination.innerHTML += `<li><a href="#materials" onclick="chooseCategory(${page + 1});"><span uk-pagination-next></span></a></li>`
                     }
                     }
                     
                     const matirials = d['matirial']
+                    if (!matirials.length) {
+                        print('not fined')
+                        let h2 = document.createElement('h2')
+                        h2.textContent = 'нічого не знайдено :('
+                        h2.classList = 'uk-text-center'
+                        // method.innerHTML += "<h2></h2>"
+                        method.appendChild(h2)
+                    }
                     for (let index = 0; index < matirials.length; index++) {
                         const matirial = matirials[index]
                         const idMatirial = matirial['id']

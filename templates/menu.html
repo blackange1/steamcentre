@@ -43,12 +43,12 @@
         <div class="uk-navbar-right">
             {% if user.is_active %}
             <div class="uk-visible@m" style="margin: 0 10px;">
-                <a class="uk-text-default" href="{% url 'user_info' user.username %}">КАБІНЕТ</a>
+                <a class="uk-text-default" href="{% url 'user_info' user.username %}" style="padding-right: 10px;">КАБІНЕТ</a>
                 <a class="uk-text-default" href="{% url 'account_logout' %}">ВИЙТИ</a>
             </div>
             {% else %}
             <div class="uk-visible@m" style="margin: 0 10px;">
-                <a class="uk-text-default" href="{% url 'account_login' %}">УВІЙТИ</a>
+                <a class="uk-text-default" href="{% url 'account_login' %}" style="padding-right: 10px;">УВІЙТИ</a>
                 <a class="uk-text-default"
                    href="{% url 'account_signup' %}">ЗАРЕЄСТРУВАТИСЯ</a>
             </div>

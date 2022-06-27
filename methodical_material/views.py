@@ -74,7 +74,9 @@ class EduMaterialAPIView(APIView):
         end_position = page * page_size
         count_page = len(lst) // page_size + int(bool(len(lst) % page_size))
         if count_page < page:
-            return []
+            return {
+                'matirial': {}
+            }
         return {
             'count_page': count_page,
             'page': page,
