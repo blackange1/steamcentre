@@ -12,6 +12,7 @@ class OneEduMaterialSerializer(serializers.Serializer):
     link_download = serializers.CharField(max_length=255)
     source = serializers.CharField(max_length=255)
     like = serializers.IntegerField()
+    count_comments = serializers.IntegerField()
 
 
 class ColorSerializer(serializers.Serializer):

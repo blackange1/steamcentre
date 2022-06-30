@@ -1,15 +1,11 @@
 from django.urls import path, include
 from .views import show_material, EduMaterialAPIView, EduСategoryAPIView,\
     show_own_material, ColorSerializerAPIView
-from rest_framework import routers
-
-#
-# router = routers.DefaultRouter()
-# router.register(r'material', EduMaterialViewSet)
+# from .views import email
 
 
 urlpatterns = [
-    # path('api/', include(router.urls)),
+    # path('email/', email, name='email'),
     path('api/v1/edumaterials/', EduMaterialAPIView.as_view()),
     path('api/v1/edumaterials/<int:pk>', EduMaterialAPIView.as_view()),
     path('api/v1/categories/', EduСategoryAPIView.as_view()),

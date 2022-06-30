@@ -51,11 +51,11 @@
 
 
         ////////////
-        // update_db
+        // updateDB
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
         
-        function update_db(url) {
+        function updateDB(url) {
             return function(data) {
                 let req = axios({
                 method: 'put',
@@ -76,17 +76,16 @@
             }
         }
 
-        add_favorite = update_db('/api/v1/user/')
-        // add_favorite({'favorite_id': 1377})
+        addFavorite = updateDB('/api/v1/user/')
 
-        function click_favorite(id_material) {
-            add_favorite({'favorite_id': id_material})
+        function clickFavorite(id_material) {
+            addFavorite({'favorite_id': id_material})
             bookmark = document.getElementById(`bookmark_${id_material}`)
             bookmark.classList.toggle('favorite')
         }
 
         function click_like(id_material) {
-            add_favorite({'like_id': id_material})
+            addFavorite({'like_id': id_material})
             like = document.getElementById(`like_${id_material}`)
             
             let isClassName = false
@@ -106,7 +105,7 @@
         }
 
         ////////////
-        // update_db
+        // updateDB
 
 
         const searchMaterial = () => {
@@ -158,11 +157,11 @@
                     let checkBoxsLessons = ''
                     for (let index = 0; index < categories.length; index++) {
                         const category = categories[index]
-                        const id_category = category['id']
+                        // const idCategory = category['id']
                         const name = category['name']
-                        let long_name = category['long_name']
-                        if (!long_name){
-                            long_name = name
+                        let longName = category['long_name']
+                        if (!longName){
+                            longName = name
                         }
                         const type_category = category['type_category']
 
@@ -173,7 +172,7 @@
                             <label 
                                 for="${name}"
                                 class="filter_text"
-                            >${long_name}</label>
+                            >${longName}</label>
                             </div>
                         `
                         if (type_category === '---') {
@@ -248,7 +247,6 @@
                         let h2 = document.createElement('h2')
                         h2.textContent = 'нічого не знайдено :('
                         h2.classList = 'uk-text-center'
-                        // method.innerHTML += "<h2></h2>"
                         method.appendChild(h2)
                     }
                     for (let index = 0; index < matirials.length; index++) {
@@ -266,10 +264,10 @@
                         const isFavorite = matirial['is_favorite']
                         const isLiked = matirial['is_liked']
 
-                        let batton_category = ''
+                        let battonCategory = ''
                         for (let index = 0; index < eduCategory.length; index++) {
                             const edu_element = eduCategory[index];
-                            batton_category += `
+                            battonCategory += `
                                 <a href="#materials">
                                     <button 
                                         onclick="renderMaterials({'categories': ['${edu_element}']});resetFilter('${edu_element}')"
@@ -281,20 +279,20 @@
                             `
                         }
 
-                        let p_description = ''
+                        let pDescription = ''
                         for (let index = 0; index < description.length; index++) {
                             const element_description = description[index];
-                            p_description += `
+                            pDescription += `
                                 <p class="uk-text-justify">${element_description}</p>
                             `
                         }
 
-                        let div_source = '<div class="clear">'
+                        let divSource = '<div class="clear">'
                         if (source) {
-                            div_source += `<span class="like-comment"><a href="${source}" target="_blank">Джерело</a></span>`
+                            divSource += `<span class="like-comment"><a href="${source}" target="_blank">Джерело</a></span>`
                         }
                         if (linkDownload) {
-                            div_source += `<span class="like-comment"><a href="${linkDownload}" target="_blank" uk-icon="cloud-download"></a></span>`
+                            divSource += `<span class="like-comment"><a href="${linkDownload}" target="_blank" uk-icon="cloud-download"></a></span>`
                         }
 
                         let classFavorite = ""
@@ -305,12 +303,12 @@
                         if (isLiked) {
                             classLiked = ' liked'
                         }
-                        div_source += `
-                            <span class="like-comment${classFavorite}" id="bookmark_${idMatirial}" uk-icon="bookmark" onclick=click_favorite(${idMatirial})></span>
+                        divSource += `
+                            <span class="like-comment${classFavorite}" id="bookmark_${idMatirial}" uk-icon="bookmark" onclick=clickFavorite(${idMatirial})></span>
                             <span class="like-comment"><a href="/methodical_material/${idMatirial}#comments" uk-icon="comments"></a><span> </span>${countComments}</span>
                             <span class="like-comment ${classLiked}" id="like_${idMatirial}" onclick=click_like(${idMatirial})><span uk-icon="heart"></span><span id="count_${idMatirial}"><span> </span>${like}</span></span>
                         `
-                        div_source += '</div>'
+                        divSource += '</div>'
                         
                         method.innerHTML += `
                             <article class="uk-article uk-animation-slide-left">
@@ -321,10 +319,10 @@
                                     <div class="article_content" style="border-color: #${color};">
                                         <a href="${idMatirial}"><h2 class="article_headline">${name}</h2></a>
                                         <div class="article_tags">
-                                            ${batton_category}
+                                            ${battonCategory}
                                         </div>
-                                        ${p_description}
-                                        ${div_source}
+                                        ${pDescription}
+                                        ${divSource}
                                     </div>
                                 </div>
                             </article>
@@ -339,6 +337,5 @@
 
         }, false);
     </script>
-
 
 {% endblock %}

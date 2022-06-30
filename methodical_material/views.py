@@ -6,6 +6,18 @@ from steamcentre.settings import PAGE_SIZE
 from .models import EduMaterial, EduСategory, Color
 from .serializers import OneEduMaterialSerializer, ColorSerializer
 
+# from django.core.mail import send_mail
+# from django.conf import settings
+#
+#
+# def email(request):
+#     subject = 'Thank you for registering to our site'
+#     message = ' it  means a world to us '
+#     email_from = settings.EMAIL_HOST_USER
+#     recipient_list = ['gomerbabenko@gmail.com',]
+#     send_mail(subject, message, email_from, recipient_list)
+#     return redirect('show_material')
+
 
 def show_material(request):
     return render(request, 'methodical_material/material.html')
@@ -90,8 +102,6 @@ class EduMaterialAPIView(APIView):
         except:
             pass
 
-        print(page, type(page))
-
         all_matirial = False
         if hasattr(request.user, 'profile'):
             profile = request.user.profile
@@ -112,7 +122,6 @@ class EduMaterialAPIView(APIView):
 
         # ?filer='favorite'
         filer = dict(request.query_params).get('filer', None)
-        print(filer)
         if filer:
             filer = filer[0]
             user = request.user
@@ -132,7 +141,6 @@ class EduMaterialAPIView(APIView):
         list_category = dict(request.query_params).get('categories', None)
         if list_category:
             list_category = list_category[0].split(',')
-            print('list_category', list_category)
             for category in list_category:
                 for edu_material in EduMaterial.objects.filter(edu_сategory__name=category):
                     if edu_material.id in set_id:
