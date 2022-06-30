@@ -16,6 +16,16 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <button type="submit" class="uk-button uk-button-default">{% trans "Sign Up" %} &raquo;</button>
+
+
+<div class="socialaccount_ballot">
+    <br>
+  <hr>
+    <div class="login-or">{% trans 'or' %} за допомогою</div>
+    <ul class="socialaccount_providers">
+        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
+</div>
 </form>
 
 {% endblock %}
