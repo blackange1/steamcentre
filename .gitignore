@@ -6,3 +6,4 @@ db.sqlite3
 templates/registration
 /tmp
 media/
+static/

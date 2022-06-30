@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import os
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2wi2^4mx)e5d(4c*__d==m=59ftxd(!bt4go876l!8@*^+oeo^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = [
-    'plsteamcenter.pythonanywhere.com',
-    'gomeriii.pythonanywhere.com',
-    '127.0.0.1']
-# ALLOWED_HOSTS = []
+DEBUG = False
+# ALLOWED_HOSTS = [
+#     'plsteamcenter.pythonanywhere.com',
+#     'gomeriii.pythonanywhere.com',
+#     '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -59,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -191,6 +191,11 @@ SOCIALACCOUNT_PROVIDERS = {
     #         'VERSION': 'v2.4'
     #     }
 }
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+}
 PAGE_SIZE = 8
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -199,4 +204,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'pl.steam.center@gmail.com'
 # EMAIL_HOST_PASSWORD = ''
-
+# python manage.py collectstatic

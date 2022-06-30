@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/methodical_material.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header class="header visibility_header">
+    <img class="header_canvas" src="{% static 'img/header/header_equipment.svg' %}" alt="">
+</header>
+<main class="main uk-text-center" style="padding: 20px">
+    <h2>Помилка 500</h2>
+    <h2>Помилка сервера</h2>
+</main>
+
+
+{% endblock %}

@@ -6,12 +6,16 @@ from main_page.forms import LoginForm, NewUserForm
 from main_page.models import MainSlider
 
 
+def error_404(request, *args, **argv):
+    return render(request, 'main_page/404.html')
+
+
+def error_500(request, *args, **argv):
+    return render(request, 'main_page/500.html')
+
+
 def index(request):
     return render(request, 'main_page/index.html', {'cards': MainSlider.objects.all()})
-
-
-# def about(request):
-#     return render(request, 'main_page/about.html')
 
 
 def faq(request):
