@@ -21,11 +21,11 @@ SECRET_KEY = 'django-insecure-2wi2^4mx)e5d(4c*__d==m=59ftxd(!bt4go876l!8@*^+oeo^
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# ALLOWED_HOSTS = [
-#     'plsteamcenter.pythonanywhere.com',
-#     'gomeriii.pythonanywhere.com',
-#     '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'plsteamcenter.pythonanywhere.com',
+    'gomeriii.pythonanywhere.com',
+    '127.0.0.1']
+
 
 # Application definition
 
@@ -58,7 +58,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
