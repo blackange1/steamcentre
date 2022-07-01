@@ -6,6 +6,10 @@ from django.utils.html import mark_safe
 
 
 class Laboratory(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Лабораторії'
+
     number_of_lab = \
         models.PositiveSmallIntegerField(
             verbose_name='номер',
@@ -45,6 +49,10 @@ class Laboratory(models.Model):
 
 
 class Product(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Набори'
+
     number_of_products = \
         models.PositiveSmallIntegerField(
             verbose_name='номер',

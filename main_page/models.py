@@ -6,10 +6,16 @@ from django.utils.html import mark_safe
 
 
 class MainSlider(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Слайди головної сторінки'
+
     title = \
         models.CharField(max_length=200, verbose_name='заголовок')
+
     text = \
         models.TextField(verbose_name='Опис')
+
     img = \
         models.ImageField(upload_to='main_slider', verbose_name='Зображення')
 

@@ -9,10 +9,11 @@ class ProfileAdmin(admin.ModelAdmin):
         'img_preview',
     )
 
-    readonly_fields = ('img_preview',)
+    readonly_fields = ('user', 'img_preview', 'collection_material', 'liked')
 
     def img_preview(self, obj):
         return obj.img_preview
+
 
 admin.site.register(Profile, ProfileAdmin)
 

@@ -6,6 +6,10 @@ from django.utils.html import mark_safe
 
 
 class Color(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Кольори'
+
     name = \
         models.CharField(
             max_length=50,
@@ -32,6 +36,10 @@ class Color(models.Model):
 
 
 class EduСategory(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Категорії'
+
     name = \
         models.CharField(
             max_length=50,
@@ -68,6 +76,10 @@ class EduСategory(models.Model):
 
 
 class EduMaterial(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Методичні матеріали'
+
     name = \
         models.CharField(max_length=200, verbose_name='назва')
 

@@ -6,6 +6,10 @@ from methodical_material.models import EduMaterial
 
 
 class Profile(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Профіль користувачів'
+
     user = \
         models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
@@ -34,6 +38,10 @@ class Profile(models.Model):
 
 
 class Comment(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Коментарії'
+
     edu_material = \
         models.ForeignKey(EduMaterial, on_delete=models.CASCADE)
 
@@ -51,6 +59,10 @@ class Comment(models.Model):
 
 
 class SubComment(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Вкладені коментарії'
+
     text = \
         models.CharField(max_length=500)
 

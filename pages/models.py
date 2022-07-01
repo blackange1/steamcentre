@@ -6,8 +6,13 @@ from django.utils.html import mark_safe
 
 
 class Page(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Статичні сторінки'
+
     link = \
         models.SlugField(max_length=50, verbose_name='посилання', help_text='Посилання не додається автоматично до меню. Приклад: mobile_lab')
+
     html_code = \
         models.TextField(
             verbose_name='HTML код сторінки',
@@ -19,8 +24,13 @@ class Page(models.Model):
 
 
 class Image(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Зображення'
+
     name = \
         models.CharField(max_length=50, null=True, blank=True, verbose_name='назва')
+
     img = \
         models.ImageField(upload_to='pages', verbose_name='зображення')
 

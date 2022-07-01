@@ -6,6 +6,10 @@ from django.utils.html import mark_safe
 
 
 class Courses(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Курси'
+
     number_of_courses = \
         models.PositiveSmallIntegerField(
             verbose_name='номер',
@@ -55,6 +59,10 @@ class Courses(models.Model):
 
 
 class ModuleOfCourses(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Модулі курсів'
+
     courses = \
         models.ForeignKey(Courses, on_delete=models.CASCADE, verbose_name='курс')
 
